@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rechcel Toledo - Web Developer
+> **"Let's build something amazing together!"**
 
-## Getting Started
 
-First, run the development server:
+## About Me
+Hello! I'm Rechcel, a passionate and professional web developer with extensive experience in front-end and full-stack development. My journey in web development spans over five years, with a strong background in database administration and website design. I'm a team player with a keen eye for detail, and I love crafting user-centric, responsive web applications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Skills
+- **Front-end:** React, Bootstrap
+- **Back-end:** Express, Node.js
+- **Databases:** MongoDB, MySQL
+- **CMS:** WordPress, Hostinger
+- **PHP Framework:** Laravel
+- **Version Control:** Git
+- **API:** REST API, Flask Framework, Fast API, Django
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Education
+- Full Stack Development, KODEGO BOOTCAMP, 2022-2023
+- Computer Science, University of Mindanao (Tagum), 2019-2020
+- Computer Hardware & Networking, NCII, Maco Institute of Technology, 2016-2017
+- High School, Atty. Orlando S. Rimando NHS, 2011-2012 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Experience
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Web Development Instructor at WAMM LLC (2023-Present)
+- Developed and delivered a comprehensive web development curriculum.
+- Focused on hands-on training and real-world challenges.
+- Fostered an interactive learning environment.
 
-## Learn More
+### React Developer at Foxcom Ltd (2022-2023)
+- Key role in designing and developing user-friendly web applications.
+- Ensured optimal user experience and application functionality.
 
-To learn more about Next.js, take a look at the following resources:
+### Full Stack Python Developer for Amol Malankar (Freelance, 2023-Present)
+- Designed, developed, and maintained full-stack Python applications.
+- Leveraged various Python frameworks for backend optimization.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Projects
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Purple Roof - Front-End Developer
+[Visit Site](https://purpleroof.com/)
+- Developed engaging and responsive front-end features.
+- Collaborated in a team to enhance user experience.
 
-## Deploy on Vercel
+### Memelope - Full Stack Developer
+- Built and maintained full-stack features for a dynamic web application.
+- Worked with a variety of technologies for a seamless experience.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Personal Website - [PHCodeSage.tech](http://phcodesage.tech)
+- A showcase of my personal projects and skills.
+- Features a blog, portfolio, and contact information.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# phcodesage
-# phcodesage
-# phcodesage
-# phcodesage
+## Contact
+- **Email:** [rechceltoledo@gmail.com]
+- **LinkedIn:** [https://www.linkedin.com/in/rechcel-toledo-4502b6233/]
+- **Twitter:** [https://twitter.com/RechcelT]
+
+---
+
+Feel free to reach out for collaborations or job opportunities. I'm always eager to contribute to exciting projects and grow as a professional in the field of web development.
+

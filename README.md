@@ -3,7 +3,7 @@
 
 
 ## About Me
-Hello! I'm Rechcel, a passionate and professional web developer with extensive experience in front-end and full-stack development. My journey in web development spans over five years, with a strong background in database administration and website design. I'm a team player with a keen eye for detail, and I love crafting user-centric, responsive web applications.
+Hello! I'm Rech, a passionate computer | android tech and professional web developer with extensive experience in front-end and full-stack development. My journey in web development spans over five years, with a strong background in database administration and website design. I'm a team player with a keen eye for detail, and I love crafting user-centric, responsive web applications.
 
 ## Skills
 - **Front-end:** React, Bootstrap, Tailwind

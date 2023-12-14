@@ -6,8 +6,8 @@
 Hello! I'm Rechcel, a passionate and professional web developer with extensive experience in front-end and full-stack development. My journey in web development spans over five years, with a strong background in database administration and website design. I'm a team player with a keen eye for detail, and I love crafting user-centric, responsive web applications.
 
 ## Skills
-- **Front-end:** React, Bootstrap
-- **Back-end:** Express, Node.js
+- **Front-end:** React, Bootstrap, Tailwind
+- **Back-end:** Express, Node.js, Flask
 - **Databases:** MongoDB, MySQL
 - **CMS:** WordPress, Hostinger
 - **PHP Framework:** Laravel

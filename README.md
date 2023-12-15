@@ -38,11 +38,12 @@ Hello! I'm Rech, a passionate computer | android tech and professional web devel
 ## Projects
 
 ### Purple Roof - Front-End Developer
-[Visit Site](https://purpleroof.com/)
+[Purple Roof](https://purpleroof.com/)
 - Developed engaging and responsive front-end features.
 - Collaborated in a team to enhance user experience.
 
 ### Memelope - Full Stack Developer
+[Shamuscoachbus](https://www.shamuscoachbus.com//)
 - Built and maintained full-stack features for a dynamic web application.
 - Worked with a variety of technologies for a seamless experience.
 

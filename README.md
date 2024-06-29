@@ -1,10 +1,35 @@
-# Rechcel Toledo - Web Developer
-> **🚀 "Together, let's create something exceptional!"**
+<p align="center">
+  <img alt="Portfolio Banner" src="https://phcodesage.tech/images/banner.jpg" />
+</p>
 
-## 👩‍💻 About Me
-Greetings! I'm Rechcel, but you can call me Rech. I'm a dedicated web developer with a deep passion for computer and android technologies. With over five years of experience in the industry, I excel in both front-end and full-stack development projects. My expertise lies in database administration and website design, focusing on developing responsive, user-centered web applications with an acute attention to detail.
+<h1 align="center">
+  Rechcel Toledo - Web Developer
+</h1>
 
-## 🛠️ Skills
+<p align="center">
+  <a aria-label="LinkedIn" href="https://www.linkedin.com/in/rechcel-toledo/">
+    <img alt="" src="https://img.shields.io/badge/LinkedIn-0077B5.svg?style=for-the-badge&logo=LinkedIn&labelColor=0077B5">
+  </a>
+  <a aria-label="GitHub" href="https://github.com/phcodesage">
+    <img alt="" src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&labelColor=181717">
+  </a>
+</p>
+
+## 📋 Table of Contents
+
+1. 🤖 [Introduction](#introduction)
+2. 🛠️ [Skills](#skills)
+3. 🎓 [Education](#education)
+4. 💼 [Experience](#experience)
+5. 🌟 [Projects](#projects)
+6. 🏀 [Hobbies](#hobbies)
+7. 📬 [Contact](#contact)
+
+## <a name="introduction">🤖 Introduction</a>
+Hello! I'm Rechcel Toledo, a passionate Full Stack Developer with experience in crafting web apps, mobile apps, and full stack websites. I enjoy playing video games, exploring Android hacking, playing basketball, and swimming. Welcome to my portfolio where I showcase my journey through tech and the projects I've worked on.
+
+## <a name="skills">🛠️ Skills</a>
+
 - **Front-end:** React, Bootstrap, Tailwind CSS
 - **Back-end:** Express, Node.js, Flask, Python
 - **Databases:** MongoDB, MySQL
@@ -12,12 +37,13 @@ Greetings! I'm Rechcel, but you can call me Rech. I'm a dedicated web developer 
 - **Version Control & APIs:** Git, REST API, FastAPI
 - **Other Skills:** Graphic Design, Computer Hardware & Networking
 
-## 🎓 Education
+## <a name="education">🎓 Education</a>
+
 - Kodego Bootcamp, Full Stack Development (2022-2023)
 - University of Mindanao, B.S. in Computer Science (2019-2021)
 - Maco Institute of Technology, Computer Hardware & Networking, NCII (2016-2018)
 
-## 💼 Experience
+## <a name="experience">💼 Experience</a>
 
 ### Back-end Developer, Rooche Digital (Oct 2023 - Jan 2024)
 - Ensured the seamless functionality and performance of web applications by handling server-side logic and integrating with APIs and databases.
@@ -39,7 +65,7 @@ Greetings! I'm Rechcel, but you can call me Rech. I'm a dedicated web developer 
 - Designed, developed, and maintained full-stack Python applications tailored to client needs.
 - Optimized backend operations using various Python frameworks.
 
-## 🌟 Projects
+## <a name="projects">🌟 Projects</a>
 
 ### Purple Roof - Front-End Developer
 - Contributed to the responsive front-end feature development.
@@ -49,17 +75,17 @@ Greetings! I'm Rechcel, but you can call me Rech. I'm a dedicated web developer 
 - Built and maintained dynamic web application features as a full-stack developer.
 - Employed a variety of technologies for a seamless user experience.
 
-### Personal Website - [PHCodeSage.site](http://phcodesage.site)
+### Personal Website - [PHCodeSage.tech](http://phcodesage.tech)
 - A personal showcase of projects and skills.
 - Features a blog, portfolio, and contact information.
 
-## 🏀 Hobbies
+## <a name="hobbies">🏀 Hobbies</a>
 - Playing video games
 - Exploring Android hacking
 - Playing basketball
 - Swimming
 
-## 📬 Contact
+## <a name="contact">📬 Contact</a>
 - **Email:** rechceltoledo@gmail.com
 - **LinkedIn:** [Rechcel Toledo](https://www.linkedin.com/in/rechcel-toledo-4502b6233/)
 - **Twitter:** [@RechcelT](https://twitter.com/RechcelT)

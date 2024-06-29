@@ -1,60 +1,69 @@
-<p align="center">
-  <img alt="" src="/.github/assets/cover.png" />
-</p>
+# Rechcel Toledo - Web Developer
+> **🚀 "Together, let's create something exceptional!"**
 
-<h1 align="center">
-  Rechcel Toledo - Portfolio
-</h1>
+## 👩‍💻 About Me
+Greetings! I'm Rechcel, but you can call me Rech. I'm a dedicated web developer with a deep passion for computer and android technologies. With over five years of experience in the industry, I excel in both front-end and full-stack development projects. My expertise lies in database administration and website design, focusing on developing responsive, user-centered web applications with an acute attention to detail.
 
-<p align="center">
-  <a aria-label="Framework" href="https://nextjs.org">
-    <img alt="" src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=Next.js&labelColor=000">
-  </a>
-  <img alt="" src="https://img.shields.io/github/languages/top/phcodesage/portfolio?style=for-the-badge&labelColor=000">
-  <a aria-label="License" href="https://github.com/phcodesage/portfolio/blob/main/LICENSE">
-    <img alt="" src="https://img.shields.io/github/license/phcodesage/portfolio?style=for-the-badge&labelColor=000">
-  </a>
-</p>
+## 🛠️ Skills
+- **Front-end:** React, Bootstrap, Tailwind CSS
+- **Back-end:** Express, Node.js, Flask, Python
+- **Databases:** MongoDB, MySQL
+- **CMS & Frameworks:** WordPress, Hostinger, Laravel
+- **Version Control & APIs:** Git, REST API, FastAPI
+- **Other Skills:** Graphic Design, Computer Hardware & Networking
 
-## 📋 Table of Contents
+## 🎓 Education
+- Kodego Bootcamp, Full Stack Development (2022-2023)
+- University of Mindanao, B.S. in Computer Science (2019-2021)
+- Maco Institute of Technology, Computer Hardware & Networking, NCII (2016-2018)
 
-1. 🤖 [Introduction](#introduction)
-2. 🚀 [Tech Stack](#tech-stack)
-3. ✨ [Features](#features)
-4. 📚 [Getting Started](#getting-started)
+## 💼 Experience
 
-## <a name="introduction">🤖 Introduction</a>
-Hello! I'm Rechcel Toledo, a passionate Full Stack Developer with experience in crafting web apps, mobile apps, and full stack websites. I enjoy playing video games, exploring Android hacking, playing basketball, and swimming. Welcome to my portfolio where I showcase my journey through tech and the projects I've worked on.
+### Back-end Developer, Rooche Digital (Oct 2023 - Jan 2024)
+- Ensured the seamless functionality and performance of web applications by handling server-side logic and integrating with APIs and databases.
 
-## <a name="tech-stack">🚀 Tech Stack</a>
+### Web Development Instructor, WAMM LLC (May 2023 - Apr 2024)
+- Developed and delivered a comprehensive web development curriculum aligned with the latest industry standards.
+- Empowered students through hands-on training, preparing them for real-world challenges.
+- Fostered an interactive learning environment, encouraging creativity and problem-solving.
 
-- Next.js
-- React.js
-- Node.js
-- Flask
-- Laravel
-- MongoDB
-- MySQL
-- Tailwind CSS
-- Bootstrap
-- Framer Motion
-- shadcn/ui
+### Front-end Developer, Foxcom Ltd (Jun 2022 - Apr 2023)
+- Played a crucial role in the development of user-friendly web applications using React.
+- Worked collaboratively to enhance user experience and ensure seamless functionality.
 
-## <a name="features">✨ Features</a>
+### Full Stack Developer, Memelope LLC (Oct 2023 - May 2024)
+- Built and maintained dynamic web application features as a full-stack developer.
+- Employed a variety of technologies for a seamless user experience.
 
-- ⚡️ Next.js 14 with App Router
-- 📝 MDX
-- 🎨 Tailwind CSS - for styling
-- 🌈 Shadcn UI - accessible UI components
-- 🛡 Strict TypeScript and ESLint configuration
-- 📱 Responsive design
-- 🌗 Light / Dark mode
-- 📈 SEO optimized with meta tags
-- 🗺 Sitemap (WIP)
-- 📊 Sentry (setup required)
-- 🎨 Animations - using Framer Motion
-- 🏠 LightHouse score near 100
-- 🔨 Husky & Lint Staged - lint and format code before committing
-- ✅ Conventional commit lint - make sure commit messages follow the conventional commit format (WIP)
-- 💄 Prettier - code formatting
-- 👷🏻‍♂️ t3-env - validate environment variables before building (WIP)
+### Flask Full Stack Developer, Freelance for Amol Malankar (Aug 2023 - Present)
+- Designed, developed, and maintained full-stack Python applications tailored to client needs.
+- Optimized backend operations using various Python frameworks.
+
+## 🌟 Projects
+
+### Purple Roof - Front-End Developer
+- Contributed to the responsive front-end feature development.
+- Collaborated with a team to enhance user experience.
+
+### Memelope - Full Stack Developer
+- Built and maintained dynamic web application features as a full-stack developer.
+- Employed a variety of technologies for a seamless user experience.
+
+### Personal Website - [PHCodeSage.site](http://phcodesage.site)
+- A personal showcase of projects and skills.
+- Features a blog, portfolio, and contact information.
+
+## 🏀 Hobbies
+- Playing video games
+- Exploring Android hacking
+- Playing basketball
+- Swimming
+
+## 📬 Contact
+- **Email:** rechceltoledo@gmail.com
+- **LinkedIn:** [Rechcel Toledo](https://www.linkedin.com/in/rechcel-toledo-4502b6233/)
+- **Twitter:** [@RechcelT](https://twitter.com/RechcelT)
+
+---
+
+🤝 Open to collaborations and opportunities in web development. Together, we can contribute to exciting projects and grow professionally. # phcodesage.github.io

@@ -2,11 +2,11 @@ import { Project } from '@/types/project';
 
 const projects: Project[] = [
   {
-    name: 'Personal Portfolio Website',
-    slug: 'portfolio',
+    name: 'Shamus Coach Bus',
+    slug: 'shamuscoachbus',
     description:
-      'A personal portfolio to showcase your coding projects, resume, and skills in a beautifully designed format.',
-    thumbnail: '/images/projects/portfolio/cover.jpg'
+      'A bus company website to book buses with a simple form.',
+    thumbnail: '/images/projects/portfolio/cover.png'
   },
   {
     name: 'Recipe Sharing App',

@@ -8,8 +8,8 @@ import {
 
 const skills: Skill[] = [
   {
-    name: 'Web Development',
-    description: 'Building beautiful and functional websites.',
+    name: 'Full Stack Development',
+    description: 'Crafting web apps, mobile apps, and full stack websites.',
     Icon: CodeIcon
   },
   {

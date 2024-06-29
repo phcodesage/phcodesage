@@ -16,10 +16,7 @@ function About() {
             </h2>
             <div className="space-y-4">
               <p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                I am a passionate and creative Web Developer with a love for
-                beautiful and functional websites. I have experience working
-                with a variety of web technologies and frameworks and I am
-                always eager to learn new things and take on new challenges.
+                I am a dedicated and innovative Full Stack Developer with experience in crafting web apps, mobile apps, and building full stack websites. I have worked with a variety of web technologies and frameworks including React, Laravel, Flask, and more. My passion lies in solving complex problems and delivering high-quality solutions. Always eager to learn and take on new challenges, I strive to stay updated with the latest industry trends and best practices.
               </p>
               <Button asChild>
                 <Link href="resume.pdf" target="_blank">

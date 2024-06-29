@@ -1,12 +1,12 @@
 import { Contact } from '@/types/contact';
 
 const contact: Contact = {
-  email: 'john@example.com',
+  email: 'rechceltoledo@gmail.com',
   socials: {
-    github: 'https://github.com/',
-    youtube: 'https://youtube.com/',
-    twitter: 'https://twitter.com/',
-    linkedin: 'https://linkedin.com/'
+    github: 'https://github.com/phcodesage',
+    youtube: 'https://www.youtube.com/channel/UCApR_MsHwEKomZxbqaW0yqw/',
+    twitter: 'https://x.com/RechcelT',
+    linkedin: 'https://www.linkedin.com/in/rechcel-toledo/'
   }
 };
 

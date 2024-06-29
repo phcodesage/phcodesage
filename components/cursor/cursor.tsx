@@ -101,7 +101,7 @@ export default function Cursor() {
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []);
+  }, [manageMouseMove]);
 
   const template = ({
     rotate,

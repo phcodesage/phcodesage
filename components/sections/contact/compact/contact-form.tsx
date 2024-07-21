@@ -1,13 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-
-import { LoaderCircleIcon, PlusIcon } from 'lucide-react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { LoaderCircleIcon } from 'lucide-react';
 
 interface ValidationErrors {
   success: boolean;
@@ -19,21 +18,36 @@ interface ValidationErrors {
   };
 }
 
-interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {
-  state: ValidationErrors;
+interface ContactFormProps {
+  state?: ValidationErrors;
+  onSubmit: (formData: { name: string; email: string; message: string }) => void;
 }
 
-export default function ContactForm({ state }: ContactFormProps) {
-  const { pending } = useFormStatus();
+export default function ContactForm({ state, onSubmit }: ContactFormProps) {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [pending, setPending] = useState(false);
+  const [errors, setErrors] = useState<ValidationErrors | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
 
   return (
-    <>
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid gap-3">
         <Label
           htmlFor="name"
           className={cn(
             'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
-            state?.errors?.name && 'text-red-500 dark:text-red-900'
+            errors?.errors?.name && 'text-red-500 dark:text-red-900'
           )}
         >
           Name
@@ -44,17 +58,21 @@ export default function ContactForm({ state }: ContactFormProps) {
           placeholder="Jane Doe"
           required
           disabled={pending}
+          value={formData.name}
+          onChange={handleChange}
         />
-        <p className="text-sm font-medium text-red-500 dark:text-red-900">
-          {state?.errors?.name}
-        </p>
+        {errors?.errors?.name && (
+          <p className="text-sm font-medium text-red-500 dark:text-red-900">
+            {errors.errors.name}
+          </p>
+        )}
       </div>
       <div className="grid gap-3">
         <Label
           htmlFor="email"
           className={cn(
             'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
-            state?.errors?.email && 'text-red-500 dark:text-red-900'
+            errors?.errors?.email && 'text-red-500 dark:text-red-900'
           )}
         >
           Email
@@ -66,17 +84,21 @@ export default function ContactForm({ state }: ContactFormProps) {
           required
           type="email"
           disabled={pending}
+          value={formData.email}
+          onChange={handleChange}
         />
-        <p className="text-sm font-medium text-red-500 dark:text-red-900">
-          {state?.errors?.email}
-        </p>
+        {errors?.errors?.email && (
+          <p className="text-sm font-medium text-red-500 dark:text-red-900">
+            {errors.errors.email}
+          </p>
+        )}
       </div>
       <div className="grid gap-3">
         <Label
           htmlFor="message"
           className={cn(
             'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
-            state?.errors?.message && 'text-red-500 dark:text-red-900'
+            errors?.errors?.message && 'text-red-500 dark:text-red-900'
           )}
         >
           Message
@@ -84,21 +106,29 @@ export default function ContactForm({ state }: ContactFormProps) {
         <Textarea
           id="message"
           name="message"
-          placeholder={
-            'Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!'
-          }
+          placeholder="Hello! This is Jane Doe, from Example. Just wanted to say hi!"
           required
           disabled={pending}
+          value={formData.message}
+          onChange={handleChange}
         />
-        <p className="text-sm font-medium text-red-500 dark:text-red-900">
-          {state?.errors?.message}
-        </p>
+        {errors?.errors?.message && (
+          <p className="text-sm font-medium text-red-500 dark:text-red-900">
+            {errors.errors.message}
+          </p>
+        )}
       </div>
 
       <Button type="submit" disabled={pending}>
         {pending && <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />}
         Submit
       </Button>
-    </>
+
+      {errors && !errors.success && (
+        <p className="text-sm font-medium text-red-500 dark:text-red-900">
+          {errors.message}
+        </p>
+      )}
+    </form>
   );
 }

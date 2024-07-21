@@ -1,8 +1,17 @@
 'use server';
 import { Resend } from 'resend';
-import { ContactEmail } from '@/components/emails/contact-template';
-
 import { z } from 'zod';
+import { renderEmailTemplate } from '@/utils/renderEmailTemplate';
+
+interface ValidationErrors {
+  success: boolean;
+  message: string;
+  errors?: {
+    name?: string[] | undefined;
+    email?: string[] | undefined;
+    message?: string[] | undefined;
+  };
+}
 
 const contactFormSchema = z.object({
   name: z
@@ -24,7 +33,7 @@ const contactFormSchema = z.object({
 const EMAIL_FROM = process.env.EMAIL_FROM;
 const EMAIL_TO = process.env.EMAIL_TO;
 
-export async function contactSubmit(prevState: any, formData: FormData) {
+export async function contactSubmit(prevState: any, formData: FormData): Promise<ValidationErrors> {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const validatedFields = contactFormSchema.safeParse({
@@ -34,6 +43,7 @@ export async function contactSubmit(prevState: any, formData: FormData) {
     });
 
     if (!validatedFields.success) {
+      console.log('Validation failed:', validatedFields.error.flatten().fieldErrors);
       return {
         success: false,
         errors: validatedFields.error.flatten().fieldErrors,
@@ -44,31 +54,44 @@ export async function contactSubmit(prevState: any, formData: FormData) {
     const { name, email, message } = validatedFields.data;
 
     if (!EMAIL_FROM || !EMAIL_TO) {
-      return {
-        success: false,
-        message: 'Oops! There went wrong. Please try again later.'
-      };
-    }
-
-    const { data: res, error } = await resend.emails.send({
-      from: EMAIL_FROM,
-      to: EMAIL_TO,
-      subject: `Message from ${name} on Portfolio`,
-      react: ContactEmail({ name, email, message })
-    });
-
-    if (error) {
+      console.log('Email configuration error');
       return {
         success: false,
         message: 'Oops! Something went wrong. Please try again later.'
       };
     }
 
+    const emailString = renderEmailTemplate({ name, email, message });
+
+    const textContent = `
+      Name: ${name}
+      Email: ${email}
+      Message: ${message}
+    `;
+
+    const { data, error } = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: EMAIL_TO,
+      subject: `Message from ${name} on Portfolio`,
+      html: emailString,
+      text: textContent
+    });
+
+    if (error) {
+      console.log('Error sending email:', error);
+      return {
+        success: false,
+        message: 'Oops! Something went wrong. Please try again later.'
+      };
+    }
+
+    console.log('Email sent successfully:', data);
     return {
       success: true,
       message: 'Thank you for reaching out! Your message has been sent.'
     };
   } catch (error) {
+    console.error('Server error:', error);
     return {
       success: false,
       message: 'Oops! Something went wrong. Please try again later.'

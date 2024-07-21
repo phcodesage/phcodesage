@@ -8,7 +8,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { metadata as meta } from './config';
 
 const inter = Instrument_Sans({ subsets: ['latin'] });
-
+import { Analytics } from '@vercel/analytics/react';
 export const metadata: Metadata = {
   metadataBase: new URL(meta.site.url),
   title: {
@@ -107,6 +107,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

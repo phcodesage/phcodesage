@@ -5,22 +5,25 @@ import { getAllPages, getPage, type ProjectMetadata } from '@/lib/mdx';
 import Header from './header';
 
 // Import icons from react-icons
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaAws } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiApollographql } from 'react-icons/si';
+import { FaCss3Alt, FaJs, FaNode, FaReact } from 'react-icons/fa';
+import { SiBootstrap, SiJquery, SiAmazonaws, SiResponsive, SiApollographql, SiMongodb, SiExpress } from 'react-icons/si';
 import { IconType } from 'react-icons/lib';
 
 // Define a type for the keys of techIcons
-type TechLabels = 'HTML' | 'CSS' | 'JavaScript' | 'React' | 'Next.js' | 'Tailwind CSS' | 'AWS S3' | 'API Development';
+type TechLabels = 'Bootstrap' | 'jQuery' | 'Node.js' | 'AWS S3' | 'CSS3' | 'JavaScript' | 'Responsive Design' | 'REST API' | 'MongoDB' | 'Express' | 'React';
 
 const techIcons: Record<TechLabels, IconType> = {
-  'HTML': FaHtml5,
-  'CSS': FaCss3Alt,
+  'Bootstrap': SiBootstrap,
+  'jQuery': SiJquery,
+  'Node.js': FaNode,
+  'AWS S3': SiAmazonaws,
+  'CSS3': FaCss3Alt,
   'JavaScript': FaJs,
+  'Responsive Design': SiResponsive,
+  'REST API': SiApollographql,
+  'MongoDB': SiMongodb,
+  'Express': SiExpress,
   'React': FaReact,
-  'Next.js': SiNextdotjs,
-  'Tailwind CSS': SiTailwindcss,
-  'AWS S3': FaAws,
-  'API Development': SiApollographql,
 };
 
 type ProjectPageProps = {
@@ -117,7 +120,7 @@ const ProjectPage = (props: ProjectPageProps) => {
       <div className="my-8">
         <h2 className="text-2xl font-bold">Tech Stack</h2>
         <ul className="list-none mt-4 flex flex-wrap gap-4">
-          {metadata.techstack.map((tech, index) => {
+          {(metadata.techstack ?? []).map((tech, index) => {
             const Icon = techIcons[tech.label as TechLabels];
             return (
               <li key={index} className="flex items-center space-x-2">

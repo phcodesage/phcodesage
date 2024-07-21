@@ -37,13 +37,6 @@ const experiences: Experience[] = [
       'Handled server-side development, ensuring seamless functionality and performance of web applications. Designed and implemented APIs, managed databases, and optimized application performance.'
   },
   {
-    name: 'Founder',
-    duration: 'Mar 2023 - Oct 2023',
-    company: 'SYNTHECITY I.T Solutions',
-    description:
-      'Founded and managed an IT solutions company, delivering innovative digital solutions. Oversaw business development, project management, and client relations.'
-  },
-  {
     name: 'Massage Therapists',
     duration: 'Mar 2018 - Mar 2023',
     company: 'Sawadeekap Thai Foot and Body Spa',

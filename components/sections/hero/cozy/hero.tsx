@@ -1,9 +1,9 @@
 import React from 'react';
 import MotionWrap from '@/components/motion-wrap';
 import Image from 'next/image';
-
 import { metadata as meta } from '@/app/config';
 import { hero } from '@/components/sections/hero/config';
+import 'animate.css';
 
 function Hero() {
   return (
@@ -14,7 +14,7 @@ function Hero() {
             {hero.label}
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Hi, I&apos;m {hero.name}
+            Hi, I&apos;m <span className="animate__animated animate__bounce">{hero.name}</span>
           </h1>
           <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             {hero.description}
@@ -27,7 +27,7 @@ function Hero() {
           sizes="100vw"
           src={'/images/hero.jpg'}
           width="800"
-          priority={true}
+          priority
         />
       </div>
     </MotionWrap>

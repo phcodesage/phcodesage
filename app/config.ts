@@ -7,16 +7,16 @@ const metadata: Metadata = {
     label: 'Full Stack Web Developer'
   },
   site: {
-    title: 'phcodesage - Portfolio Website',
-    description: 'Portfolio of web & UI designer/developer John Doe.',
+    title: 'phcodesage',
+    description: 'Portfolio of web & app/developer Rech Toledo.',
     ogImage: '/images/og.png',
-    url: 'https://www.example.com',
+    url: 'http://phcodesage.site',
     keywords: [
       'web design',
       'UI design',
       'web development',
       'portfolio',
-      'John Doe'
+      'Rech Toledo'
     ],
     language: 'en',
     charset: 'UTF-8'

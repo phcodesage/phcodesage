@@ -9,11 +9,11 @@ const projects: Project[] = [
     thumbnail: '/images/projects/portfolio/cover.png'
   },
   {
-    name: 'Recipe Sharing App',
-    slug: 'recipe_app',
+    name: 'Purple Roof',
+    slug: 'purpleroof',
     description:
-      'A social app for food lovers where users can post, share, and discover recipes from around the world.',
-    thumbnail: '/images/projects/recipe_app/cover.jpg'
+      'Purple Roof is a real estate firm specializing in property listing and mortgage loan processing.',
+    thumbnail: '/images/projects/purple-roof/cover.png'
   },
   {
     name: 'Virtual Study Group Platform',

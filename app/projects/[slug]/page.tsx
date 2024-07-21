@@ -1,9 +1,23 @@
 import Image from 'next/image';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
-
 import { getAllPages, getPage, type ProjectMetadata } from '@/lib/mdx';
 import Header from './header';
+
+// Import icons from react-icons
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaAws } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiApollographql } from 'react-icons/si';
+
+const techIcons = {
+  'HTML': FaHtml5,
+  'CSS': FaCss3Alt,
+  'JavaScript': FaJs,
+  'React': FaReact,
+  'Next.js': SiNextdotjs,
+  'Tailwind CSS': SiTailwindcss,
+  'AWS S3': FaAws,
+  'API Development': SiApollographql,
+};
 
 type ProjectPageProps = {
   params: {
@@ -96,7 +110,23 @@ const ProjectPage = (props: ProjectPageProps) => {
         alt={metadata.name}
         className="my-12 rounded-lg"
       />
-      {content}
+      <div className="my-8">
+        <h2 className="text-2xl font-bold">Tech Stack</h2>
+        <ul className="list-none mt-4 flex flex-wrap gap-4">
+          {metadata.techstack.map((tech, index) => {
+            const Icon = techIcons[tech.label];
+            return (
+              <li key={index} className="flex items-center space-x-2">
+                <Icon className="text-2xl" />
+                <span className="text-lg">{tech.label}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="prose dark:prose-dark">
+        {content}
+      </div>
     </div>
   );
 };

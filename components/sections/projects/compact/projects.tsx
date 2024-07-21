@@ -20,10 +20,10 @@ function Projects() {
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              My Projects
+              Projects
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              Here are some of my projects where I&apos;ve turned code into
+              Here are some of the projects where I&apos;ve turned code into
               cool, functional stuff.
             </p>
           </div>

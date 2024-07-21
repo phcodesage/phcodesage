@@ -6,11 +6,11 @@ import Header from './header';
 
 // Import icons from react-icons
 import { FaCss3Alt, FaJs, FaNode, FaReact } from 'react-icons/fa';
-import { SiBootstrap, SiJquery, SiAmazonaws, SiResponsive, SiApollographql, SiMongodb, SiExpress } from 'react-icons/si';
+import { SiBootstrap, SiJquery, SiAmazonaws, SiApollographql, SiMongodb, SiExpress } from 'react-icons/si';
 import { IconType } from 'react-icons/lib';
 
 // Define a type for the keys of techIcons
-type TechLabels = 'Bootstrap' | 'jQuery' | 'Node.js' | 'AWS S3' | 'CSS3' | 'JavaScript' | 'Responsive Design' | 'REST API' | 'MongoDB' | 'Express' | 'React';
+type TechLabels = 'Bootstrap' | 'jQuery' | 'Node.js' | 'AWS S3' | 'CSS3' | 'JavaScript' | 'REST API' | 'MongoDB' | 'Express' | 'React';
 
 const techIcons: Record<TechLabels, IconType> = {
   'Bootstrap': SiBootstrap,
@@ -19,7 +19,6 @@ const techIcons: Record<TechLabels, IconType> = {
   'AWS S3': SiAmazonaws,
   'CSS3': FaCss3Alt,
   'JavaScript': FaJs,
-  'Responsive Design': SiResponsive,
   'REST API': SiApollographql,
   'MongoDB': SiMongodb,
   'Express': SiExpress,

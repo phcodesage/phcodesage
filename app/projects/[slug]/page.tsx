@@ -7,8 +7,12 @@ import Header from './header';
 // Import icons from react-icons
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaAws } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiApollographql } from 'react-icons/si';
+import { IconType } from 'react-icons/lib';
 
-const techIcons = {
+// Define a type for the keys of techIcons
+type TechLabels = 'HTML' | 'CSS' | 'JavaScript' | 'React' | 'Next.js' | 'Tailwind CSS' | 'AWS S3' | 'API Development';
+
+const techIcons: Record<TechLabels, IconType> = {
   'HTML': FaHtml5,
   'CSS': FaCss3Alt,
   'JavaScript': FaJs,
@@ -114,7 +118,7 @@ const ProjectPage = (props: ProjectPageProps) => {
         <h2 className="text-2xl font-bold">Tech Stack</h2>
         <ul className="list-none mt-4 flex flex-wrap gap-4">
           {metadata.techstack.map((tech, index) => {
-            const Icon = techIcons[tech.label];
+            const Icon = techIcons[tech.label as TechLabels];
             return (
               <li key={index} className="flex items-center space-x-2">
                 <Icon className="text-2xl" />

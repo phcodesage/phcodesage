@@ -6,21 +6,28 @@ const projects: Project[] = [
     slug: 'shamuscoachbus',
     description:
       'A bus company website to book buses with a simple form.',
-    thumbnail: '/images/projects/portfolio/cover.png'
+    thumbnail: '/images/projects/shamuscoachbus/cover.jpg'
   },
   {
-    name: 'Purple Roof',
     slug: 'purpleroof',
-    description:
-      'Purple Roof is a real estate firm specializing in property listing and mortgage loan processing.',
-    thumbnail: '/images/projects/purpleroof/cover.jpg'
+    name: 'Purple Roof',
+    description: 'A professional website built using modern web technologies to showcase projects and skills.',
+    thumbnail: '/images/projects/purpleroof/cover.jpg',
+    techstack: [
+      { label: 'Next.js' },
+      { label: 'React' },
+      { label: 'Tailwind CSS' },
+      { label: 'AWS S3' },
+      { label: 'API Development' },
+    ],
+    role: 'Junior Front End Developer'
   },
   {
     name: 'Ibooky Hotel Reservation',
     slug: 'ibooky',
     description:
       'A hotel reservation website where the user can book and find hotels.',
-    thumbnail: '/images/projects/study_group/cover.jpg'
+    thumbnail: '/images/projects/ibooky/cover.jpg'
   }
 ];
 

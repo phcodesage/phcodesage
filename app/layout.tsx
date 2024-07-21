@@ -6,9 +6,10 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
 import { metadata as meta } from './config';
-
-const inter = Instrument_Sans({ subsets: ['latin'] });
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+const inter = Instrument_Sans({ subsets: ['latin'] });
+
 export const metadata: Metadata = {
   metadataBase: new URL(meta.site.url),
   title: {
@@ -107,6 +108,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>

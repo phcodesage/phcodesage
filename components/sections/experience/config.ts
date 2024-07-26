@@ -37,13 +37,6 @@ const experiences: Experience[] = [
       'Handled server-side development, ensuring seamless functionality and performance of web applications. Designed and implemented APIs, managed databases, and optimized application performance.'
   },
   {
-    name: 'Massage Therapists',
-    duration: 'Mar 2018 - Mar 2023',
-    company: 'Sawadeekap Thai Foot and Body Spa',
-    description:
-      'Provided professional massage therapy services, ensuring client satisfaction and well-being.'
-  },
-  {
     name: 'Frontend Developer (Internship)',
     duration: 'Mar 2021 - Jan 2022',
     company: 'ED Online Platform',

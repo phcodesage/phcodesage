@@ -1,8 +1,7 @@
-import React from 'react';
-
 export interface Experience {
   name: string;
-  company: string;
   duration: string;
-  description?: string;
+  company: string;
+  description: string;
+  links?: { label: string; url: string }[];
 }

@@ -1,8 +1,6 @@
 import React from 'react';
-
 import MotionWrap from '@/components/motion-wrap';
 import ExperienceCard from './experience-card';
-
 import { experiences } from '@/components/sections/experience/config';
 
 function Experiences() {
@@ -27,6 +25,7 @@ function Experiences() {
                 description={experience.description}
                 company={experience.company}
                 duration={experience.duration}
+                links={experience.links} // Pass the links down to the ExperienceCard component
               />
             ))}
           </div>

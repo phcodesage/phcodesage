@@ -27,7 +27,16 @@ const experiences: Experience[] = [
     duration: 'May 2023 - Apr 2024',
     company: 'WAMM',
     description:
-      'Educated students in web development, covering both front-end and back-end technologies. Created and delivered course materials, fostering an engaging learning environment.'
+      'Educated students in web development, covering both front-end and back-end technologies. Created and delivered course materials, fostering an engaging learning environment.',
+    links: [
+      { label: 'My Udemy Profile', url: 'https://www.udemy.com/user/rechcel-toledo-2/' },
+      { label: 'ChatGPT for Web Development', url: 'https://www.udemy.com/course/chatgpt-for-web-development-beginners-guide-into-chatgpt/?couponCode=ST3MT72524' },
+      { label: 'ChatGPT for JavaScript Mastery', url: 'https://www.udemy.com/course/chatgpt-for-javascript-mastery-the-secrets-of-ai-revealed/?couponCode=ST3MT72524' },
+      { label: 'Python 101', url: 'https://www.udemy.com/course/beginners-guide-into-python-become-a-master-at-python/?couponCode=ST3MT72524' },
+      { label: 'JavaScript Mastery', url: 'https://www.udemy.com/course/javascript-mastery-learn-the-ins-outs-of-javascript/?couponCode=ST3MT72524' },
+      { label: 'Python for Beginners', url: 'https://www.udemy.com/course/python-101-master-the-fundamentals-python-for-beginners/?couponCode=ST3MT72524' },
+      { label: 'Web Development Mastery', url: 'https://www.udemy.com/course/web-development-mastery-the-secrets-of-web-development/?couponCode=ST3MT72524' }
+    ]
   },
   {
     name: 'Back End Developer',
@@ -44,6 +53,5 @@ const experiences: Experience[] = [
       'Worked on front-end development projects, using HTML, CSS, JavaScript, and Adobe Photoshop. Gained hands-on experience in web design and development.'
   }
 ];
-
 
 export { experiences };

@@ -1,13 +1,8 @@
 import React from 'react';
-import { CardContent, CardFooter, Card } from '@/components/ui/card';
+import { CardContent, Card } from '@/components/ui/card';
 import { buttonVariants } from '@/components/ui/button';
-
 import Link from 'next/link';
-import Image from 'next/image';
-import { CodeIcon } from 'lucide-react';
-
 import { Experience } from '@/types/experience';
-
 import { cn } from '@/lib/utils';
 
 interface ExperienceCardProps extends Experience {
@@ -19,6 +14,7 @@ function ExperienceCard({
   name,
   duration,
   description,
+  links,
   className
 }: ExperienceCardProps) {
   return (
@@ -30,6 +26,21 @@ function ExperienceCard({
         </div>
         <h4 className="mt-2 text-lg font-medium uppercase">{name}</h4>
         <p className="mt-2">{description}</p>
+        {links && links.length > 0 && (
+          <div className="mt-4 space-y-2">
+            {links.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline pr-2"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
         <hr className="my-6 border-t border-border" />
       </CardContent>
     </Card>

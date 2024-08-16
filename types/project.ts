@@ -9,4 +9,6 @@ export interface Project {
   thumbnail?: string;
   techstack?: TechStackItem[];
   role?: string;
+  website?: string;
+  github?: string;
 }

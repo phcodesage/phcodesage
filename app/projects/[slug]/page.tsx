@@ -5,27 +5,160 @@ import { getAllPages, getPage, type ProjectMetadata } from '@/lib/mdx';
 import Header from './header';
 
 // Import icons from react-icons
-import { FaCss3Alt, FaJs, FaNode, FaReact } from 'react-icons/fa';
-import { SiBootstrap, SiJquery, SiAmazonaws, SiApollographql, SiMongodb, SiExpress, SiNextui, SiTailwindcss, SiMysql } from 'react-icons/si';
 import { IconType } from 'react-icons/lib';
+import {
+  FaAngular,
+  FaAws,
+  FaCss3Alt,
+  FaDocker,
+  FaGithub,
+  FaGitlab,
+  FaJava,
+  FaJs,
+  FaNode,
+  FaPython,
+  FaReact,
+  FaVuejs
+} from 'react-icons/fa';
+import {
+  SiAmazondynamodb,
+  SiAndroid,
+  SiApollographql,
+  SiBootstrap,
+  SiCsharp,
+  SiDart,
+  SiDjango,
+  SiElasticsearch,
+  SiExpress,
+  SiFirebase,
+  SiFlask,
+  SiFlutter,
+  SiGo,
+  SiGraphql,
+  SiJavascript,
+  SiJquery,
+  SiKotlin,
+  SiKubernetes,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiNestjs,
+  SiNextdotjs,
+  SiNginx,
+  SiPostgresql,
+  SiRubyonrails,
+  SiRedis,
+  SiRuby,
+  SiRust,
+  SiScala,
+  SiSpring,
+  SiSqlite,
+  SiSwift,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+  SiWebpack
+} from 'react-icons/si';
 
-// Define a type for the keys of techIcons
-type TechLabels = 'Bootstrap' | 'jQuery' | 'Node.js' | 'AWS S3' | 'CSS3' | 'JavaScript' | 'REST API' | 'MongoDB' | 'Express' | 'React' | 'NEXT.js' | 'Tailwind CSS' | 'MYSQL';
+type TechLabels =
+  | 'Angular'
+  | 'AWS'
+  | 'CSS3'
+  | 'Docker'
+  | 'GitHub'
+  | 'GitLab'
+  | 'Java'
+  | 'JavaScript'
+  | 'Node.js'
+  | 'Python'
+  | 'React'
+  | 'Vue.js'
+  | 'DynamoDB'
+  | 'Android'
+  | 'Apollo'
+  | 'Bootstrap'
+  | 'C#'
+  | 'Dart'
+  | 'Django'
+  | 'Elasticsearch'
+  | 'Express'
+  | 'Firebase'
+  | 'Flask'
+  | 'Flutter'
+  | 'Go'
+  | 'GraphQL'
+  | 'jQuery'
+  | 'Kotlin'
+  | 'Kubernetes'
+  | 'Laravel'
+  | 'MongoDB'
+  | 'MySQL'
+  | 'NestJS'
+  | 'Next.js'
+  | 'Nginx'
+  | 'PostgreSQL'
+  | 'Ruby on Rails'
+  | 'Redis'
+  | 'Ruby'
+  | 'Rust'
+  | 'Scala'
+  | 'Spring'
+  | 'SQLite'
+  | 'Swift'
+  | 'Tailwind CSS'
+  | 'TypeScript'
+  | 'Vite'
+  | 'Webpack';
 
 const techIcons: Record<TechLabels, IconType> = {
-  'Bootstrap': SiBootstrap,
-  'jQuery': SiJquery,
+  Angular: FaAngular,
+  AWS: FaAws,
+  CSS3: FaCss3Alt,
+  Docker: FaDocker,
+  GitHub: FaGithub,
+  GitLab: FaGitlab,
+  Java: FaJava,
+  JavaScript: FaJs,
   'Node.js': FaNode,
-  'AWS S3': SiAmazonaws,
-  'CSS3': FaCss3Alt,
-  'JavaScript': FaJs,
-  'REST API': SiApollographql,
-  'MongoDB': SiMongodb,
-  'Express': SiExpress,
-  'React': FaReact,
-  'NEXT.js': SiNextui,
+  Python: FaPython,
+  React: FaReact,
+  'Vue.js': FaVuejs,
+  DynamoDB: SiAmazondynamodb,
+  Android: SiAndroid,
+  Apollo: SiApollographql,
+  Bootstrap: SiBootstrap,
+  'C#': SiCsharp,
+  Dart: SiDart,
+  Django: SiDjango,
+  Elasticsearch: SiElasticsearch,
+  Express: SiExpress,
+  Firebase: SiFirebase,
+  Flask: SiFlask,
+  Flutter: SiFlutter,
+  Go: SiGo,
+  GraphQL: SiGraphql,
+  jQuery: SiJquery,
+  Kotlin: SiKotlin,
+  Kubernetes: SiKubernetes,
+  Laravel: SiLaravel,
+  MongoDB: SiMongodb,
+  MySQL: SiMysql,
+  NestJS: SiNestjs,
+  'Next.js': SiNextdotjs,
+  Nginx: SiNginx,
+  PostgreSQL: SiPostgresql,
+  'Ruby on Rails': SiRubyonrails,
+  Redis: SiRedis,
+  Ruby: SiRuby,
+  Rust: SiRust,
+  Scala: SiScala,
+  Spring: SiSpring,
+  SQLite: SiSqlite,
+  Swift: SiSwift,
   'Tailwind CSS': SiTailwindcss,
-  'MYSQL': SiMysql
+  TypeScript: SiTypescript,
+  Vite: SiVite,
+  Webpack: SiWebpack
 };
 
 type ProjectPageProps = {
@@ -121,7 +254,7 @@ const ProjectPage = (props: ProjectPageProps) => {
       />
       <div className="my-8">
         <h2 className="text-2xl font-bold">Tech Stack</h2>
-        <ul className="list-none mt-4 flex flex-wrap gap-4">
+        <ul className="mt-4 flex list-none flex-wrap gap-4">
           {(metadata.techstack ?? []).map((tech, index) => {
             const Icon = techIcons[tech.label as TechLabels];
             return (
@@ -133,9 +266,7 @@ const ProjectPage = (props: ProjectPageProps) => {
           })}
         </ul>
       </div>
-      <div className="prose dark:prose-dark">
-        {content}
-      </div>
+      <div className="dark:prose-dark prose">{content}</div>
     </div>
   );
 };

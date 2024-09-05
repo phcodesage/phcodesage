@@ -3,9 +3,6 @@ I'll use a combination of Markdown and HTML to create a visually appealing and i
 </Thinking>
 
 # Rechcel Toledo - Full Stack Developer 🚀
-
-![Portfolio Banner](https://phcodesage.tech/images/banner.jpg)
-
 ## 👨‍💻 About Me
 
 Hello! I'm Rechcel Toledo, a passionate Full Stack Developer with a knack for crafting robust web and mobile applications. With a blend of technical expertise and creative problem-solving, I bring ideas to life through code.

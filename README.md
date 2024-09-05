@@ -1,90 +1,167 @@
+I'll create a Nokia 3310-themed README.md for your portfolio. This theme will evoke nostalgia while presenting your modern skills in a unique way.
+
+```markdown
 <Thinking>
-I'll use a combination of Markdown and HTML to create a visually appealing and informative README. I'll focus on highlighting key information, using emojis for visual interest, and organizing the content in a clear, professional manner.
+To create a Nokia 3310 theme, I'll use ASCII art to mimic the phone's display, use monospace font styling, and organize the content to resemble the phone's menu structure. I'll keep the content concise to fit the "small screen" aesthetic.
 </Thinking>
 
-# Rechcel Toledo - Full Stack Developer 🚀
-## 👨‍💻 About Me
+```ascii
+ ┌────────────────────────┐
+ │   ▄▄▄▄▄▄▄   ▂▂▂▂▂ ▁▁▁▁ │
+ │  █ R.Toledo █    │[]│  │
+ │   ▀▀▀▀▀▀▀▀        ▔▔▔▔ │
+ │ ┌───┐ ┌───┐ ┌───┐      │
+ │ │ 1 │ │ 2 │ │ 3 │   ▲  │
+ │ └───┘ └───┘ └───┘   │  │
+ │ ┌───┐ ┌───┐ ┌───┐   │  │
+ │ │ 4 │ │ 5 │ │ 6 │  ◄►  │
+ │ └───┘ └───┘ └───┘   │  │
+ │ ┌───┐ ┌───┐ ┌───┐   ▼  │
+ │ │ 7 │ │ 8 │ │ 9 │      │
+ │ └───┘ └───┘ └───┘   O  │
+ │ ┌───┐ ┌───┐ ┌───┐      │
+ │ │ * │ │ 0 │ │ # │      │
+ │ └───┘ └───┘ └───┘      │
+ └────────────────────────┘
+```
 
-Hello! I'm Rechcel Toledo, a passionate Full Stack Developer with a knack for crafting robust web and mobile applications. With a blend of technical expertise and creative problem-solving, I bring ideas to life through code.
+# RECHCEL TOLEDO
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rechcel-toledo/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/phcodesage)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/RechcelT)
+> Full Stack Developer
 
-## 🛠️ Tech Stack
 
-- **Frontend:** React, Bootstrap, Tailwind CSS
-- **Backend:** Express, Node.js, Flask, Python
-- **Databases:** MongoDB, MySQL
-- **CMS & Frameworks:** WordPress, Laravel
-- **Other:** Git, REST API, FastAPI, Graphic Design
 
-## 🎓 Education
+## MENU
 
-- **Full Stack Development** - Kodego Bootcamp (2022-2023)
-- **B.S. in Computer Science** - University of Mindanao (2019-2021)
-- **Computer Hardware & Networking, NCII** - Maco Institute of Technology (2016-2018)
+1. PROFILE
+2. SKILLS
+3. PROJECTS
+4. EXPERIENCE
+5. EDUCATION
+6. CONTACT
 
-## 💼 Professional Experience
 
-### Back-end Developer | Rooche Digital
-*Oct 2023 - Jan 2024*
-- Engineered robust server-side logic for web applications
-- Integrated APIs and optimized database performance
+## 1. PROFILE
 
-### Web Development Instructor | WAMM LLC
-*May 2023 - Apr 2024*
-- Developed and delivered cutting-edge web development curriculum
-- Mentored students in real-world project scenarios
+```plaintext
+Full Stack Dev with
+expertise in web &
+mobile apps. Passion
+for clean code and
+user-centric design.
+```
 
-### Front-end Developer | Foxcom Ltd
-*Jun 2022 - Apr 2023*
-- Crafted responsive and intuitive user interfaces using React
-- Collaborated in agile teams to enhance user experience
+## 2. SKILLS
 
-### Full Stack Developer | Memelope LLC
-*Oct 2023 - May 2024*
-- Architected end-to-end solutions for dynamic web applications
-- Implemented features across the full technology stack
+```plaintext
+FRONTEND:
+- React
+- Bootstrap
+- Tailwind CSS
 
-### Flask Full Stack Developer | Freelance
-*Aug 2023 - Present*
-- Design and develop bespoke Python applications
-- Optimize backend operations using Flask and related frameworks
+BACKEND:
+- Express
+- Node.js
+- Flask
+- Python
 
-## 🌟 Featured Projects
+DATABASE:
+- MongoDB
+- MySQL
 
-### Purple Roof
-- Spearheaded responsive front-end development
-- Enhanced user experience through intuitive design
+OTHER:
+- Git
+- REST API
+- FastAPI
+- Graphic Design
+```
 
-### Memelope
-- Engineered full-stack features for a dynamic web application
-- Implemented seamless integrations across the technology stack
+## 3. PROJECTS
 
-### [Personal Website](http://phcodesage.site)
-- Showcases portfolio, blog, and professional information
-- Demonstrates proficiency in modern web technologies
+```plaintext
+1. PURPLE ROOF
+   Front-End Dev
+2. MEMELOPE
+   Full Stack Dev
+3. PERSONAL SITE
+   phcodesage.site
+```
 
-## 🎯 Skills & Interests
+## 4. EXPERIENCE
 
-- Full Stack Development
-- UI/UX Design
-- Mobile App Development
-- Android Hacking
-- Computer Hardware & Networking
+```plaintext
+BACK-END DEV
+Rooche Digital
+10/2023 - 01/2024
 
-## 🏆 Achievements
+WEB DEV INSTRUCTOR
+WAMM LLC
+05/2023 - 04/2024
 
-- Successfully completed multiple client projects with 100% satisfaction rate
-- Mentored over 50 students in web development, with many securing industry positions
+FRONT-END DEV
+Foxcom Ltd
+06/2022 - 04/2023
 
-## 🌐 Connect With Me
+FULL STACK DEV
+Memelope LLC
+10/2023 - 05/2024
 
-- 📧 Email: rechceltoledo@gmail.com
-- 🔗 LinkedIn: [Rechcel Toledo](https://www.linkedin.com/in/rechcel-toledo-4502b6233/)
-- 🐦 Twitter: [@RechcelT](https://twitter.com/RechcelT)
+FLASK FULL STACK
+Freelance
+08/2023 - Present
+```
 
----
+## 5. EDUCATION
 
-💡 I'm always open to exciting collaborations and new opportunities in web development. Let's create something amazing together!
+```plaintext
+FULL STACK DEV
+Kodego Bootcamp
+2022 - 2023
+
+B.S. COMP SCIENCE
+Univ. of Mindanao
+2019 - 2021
+
+COMP HARDWARE & NET
+Maco Inst. of Tech
+2016 - 2018
+```
+
+## 6. CONTACT
+
+```plaintext
+EMAIL:
+rechceltoledo@gmail.com
+
+LINKEDIN:
+linkedin.com/in/
+rechcel-toledo
+
+GITHUB:
+github.com/phcodesage
+
+TWITTER:
+@RechcelT
+```
+
+```plaintext
+   SNAKE SCORE: 328
+┌────────────────────┐
+│ ▓▓▓▓ ▓   ▓▓▓▓▓▓▓▓▓ │
+│ ▓  ▓ ▓ ▓ ▓     ▓ ▓ │
+│ ▓▓▓▓   ▓ ▓▓▓▓▓ ▓ ▓ │
+│ ▓     ▓     ▓ ▓ ▓ │
+│ ▓ ▓▓▓▓▓▓▓▓▓ ▓ ▓ ▓ │
+│ ▓           ▓     │
+└────────────────────┘
+```
+
+> Press * to collaborate
+Press # to hire me
+
+
+
+```plaintext
+
+This Nokia 3310-themed README.md presents your information in a unique and nostalgic way. It uses ASCII art to mimic the phone's display and organizes your information into a menu structure similar to the phone's interface. The content is concise to fit the "small screen" aesthetic, while still highlighting your key skills, projects, and experiences. The Snake game score and ASCII art at the end add a playful touch that's true to the Nokia 3310 theme.
+```

@@ -14,7 +14,7 @@ function Preloader() {
         document.body.style.cursor = 'default';
         // observe: this change has not been observed for errors.
         // window.scrollTo(0, 0);
-      }, 2500);
+      }, 2000);
     })();
   }, []);
 

@@ -25,14 +25,16 @@ function About() {
             </Reveal>
           </div>
           <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
-            Here&apos;s where I share my journey through tech, highlighting the
-            experiences and passions that drive my innovative pursuits.
+            Here&apos;s where I share my journey through tech.
           </p>
         </div>
         <div className="space-y-4">
-        <p className="mt-6 max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-  I am a dedicated and innovative Full Stack Developer with experience in crafting web apps, mobile apps, and building full stack websites. I strive to stay updated with the latest industry trends and best practices. Let&apos;s build something amazing together!
-</p>
+          <p className="mt-6 max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            I began my journey as a computer technician and massage therapist,
+            and as an undergraduate computer science student, I transitioned
+            into a full stack developer after completing a bootcamp at Kodego.
+          </p>
+
           <Button asChild>
             <Link href="resume.pdf" target="_blank">
               View Resume <ArrowUpRightIcon className="ml-2 size-5" />

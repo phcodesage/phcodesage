@@ -24,6 +24,12 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
     index: 0
   });
 
+  const handleNavClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setIsActive(false);
+    }
+  };
+
   return (
     <motion.div
       variants={height}
@@ -31,6 +37,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
       animate="enter"
       exit="exit"
       className={styles.nav}
+      onClick={handleNavClick}
     >
       <div className={styles.wrapper}>
         <div className={styles.container}>

@@ -7,7 +7,8 @@ import { Toaster } from '@/components/ui/toaster';
 
 import { metadata as meta } from './config';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import DirectLink from '@/components/Ads/DirectLink';
 const inter = Instrument_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -105,6 +106,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <DirectLink />
           {children}
           <Toaster />
         </ThemeProvider>

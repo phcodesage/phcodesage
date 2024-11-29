@@ -1,11 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import styles from './style.module.scss';
 import { opacity, background } from './anim';
-import Nav from './nav';
+import Nav from './nav/index';
 import { ModeToggle } from '@/components/mode-toggle';
 import { metadata as meta } from '@/app/config';
 

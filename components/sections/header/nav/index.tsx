@@ -2,14 +2,15 @@
 import { motion } from 'framer-motion';
 import styles from './style.module.scss';
 import { height } from '../anim';
+import { Dispatch, SetStateAction } from 'react';
 
 interface NavProps {
-  setIsActive: (isActive: boolean) => void;
+  setIsActive: Dispatch<SetStateAction<boolean>>;
   onNavigate: (section: string) => void;
-  hasScrolled?: boolean;
+  hasScrolled: boolean;
 }
 
-const Nav = ({ setIsActive, onNavigate, hasScrolled = false }: NavProps) => {
+const Nav = ({ setIsActive, onNavigate, hasScrolled }: NavProps) => {
   const menuItems = ['About', 'Projects', 'Skills', 'Experience', 'Contact'];
 
   const handleClick = (section: string) => {

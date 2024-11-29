@@ -15,7 +15,7 @@ export default function ProjectLayout({
     <SmoothScroll>
       {/* <Preloader /> */}
       <div className="flex min-h-[100dvh] flex-col">
-        <Header />
+        <Header activeSection="projects" onNavigate={(section: string) => {}} />
         <main className="my-14 flex-1">{children}</main>
       </div>
       <Cursor />

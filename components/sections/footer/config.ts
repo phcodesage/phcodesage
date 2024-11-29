@@ -3,11 +3,11 @@ import { FooterItem } from '@/types/footer';
 const footer: FooterItem[] = [
   {
     title: 'Blog',
-    href: 'https://blog.example.com'
+    href: '/'
   },
   {
     title: 'Newsletter',
-    href: 'https://newsletter.example.com'
+    href: '/'
   }
 ];
 

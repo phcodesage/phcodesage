@@ -1,20 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { metadata as meta } from './config';
+import { calSans, inter } from '@/lib/fonts';
 import './globals.css';
-
-// Configure the Inter font with proper options
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  variable: '--font-inter', // Add variable for Tailwind usage
-  adjustFontFallback: true
-});
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: {
@@ -74,7 +66,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.variable}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${calSans.variable}`}
+    >
+      <head>
+        <Script
+          async
+          src="https://analytics.umami.is/script.js"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

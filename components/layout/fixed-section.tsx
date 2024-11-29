@@ -1,46 +1,44 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import styles from './fixed-section.module.scss';
+import { useInView } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 
 interface FixedSectionProps {
   children: React.ReactNode;
   id: string;
   className?: string;
+  onVisible?: (id: string) => void;
 }
 
-const FixedSection = ({ children, id, className = '' }: FixedSectionProps) => {
-  const [isActive, setIsActive] = useState(false);
+export default function FixedSection({
+  children,
+  id,
+  className = '',
+  onVisible
+}: FixedSectionProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
 
   useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById(id);
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        const isVisible = rect.top >= 0 && rect.top <= window.innerHeight / 2;
-        setIsActive(isVisible);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [id]);
+    if (isInView && onVisible) {
+      onVisible(id);
+    }
+  }, [isInView, id, onVisible]);
 
   return (
-    <motion.section
+    <section
+      ref={ref}
       id={id}
-      className={`${styles.fixedSection} ${className} ${
-        isActive ? styles.active : ''
-      }`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      className={`flex min-h-[100dvh] w-full snap-start snap-always items-center justify-center ${className}`}
     >
-      {children}
-    </motion.section>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
+        className="w-full"
+      >
+        {children}
+      </motion.div>
+    </section>
   );
-};
-
-export default FixedSection;
+}

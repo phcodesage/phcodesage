@@ -1,40 +1,26 @@
-import React from 'react';
-import { CardContent, CardFooter, Card } from '@/components/ui/card';
-import { buttonVariants } from '@/components/ui/button';
-
-import Link from 'next/link';
-import Image from 'next/image';
-import { CodeIcon } from 'lucide-react';
-
-import { Skill } from '@/types/skill';
-
+import { Card, CardContent } from '@/components/ui/card';
+import { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface SkillCardProps extends Skill {
-  index: number;
+interface SkillCardProps {
+  name: string;
+  description: string;
+  Icon: LucideIcon;
   className?: string;
 }
 
-function SkillCard({
-  name,
-  description,
-  Icon,
-  index,
-  className
-}: SkillCardProps) {
+function SkillCard({ name, description, Icon, className }: SkillCardProps) {
   return (
-    <Card className={cn('bg-muted/40', className)}>
-      <CardContent className="flex flex-col items-start p-6">
-        <div className="flex w-full items-center justify-between">
-          <span className="text-lg font-semibold">({index})</span>
-          {Icon ? <Icon className="h-8 w-8" /> : <CodeIcon />}
-        </div>
-        <div className="grid gap-0.5">
-          <h3 className="mt-2 text-2xl font-bold leading-8 tracking-tight">
-            {name}
-          </h3>
-          <p className="mt-2 text-base text-gray-500">{description || ''}</p>
-        </div>
+    <Card
+      className={cn(
+        'border-none bg-muted/40 transition-colors hover:bg-muted/60',
+        className
+      )}
+    >
+      <CardContent className="flex flex-col items-center space-y-2 p-6 text-center">
+        <Icon className="mb-2 h-8 w-8 text-primary" />
+        <h3 className="text-lg font-semibold">{name}</h3>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </CardContent>
     </Card>
   );

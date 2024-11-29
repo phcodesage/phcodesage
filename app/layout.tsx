@@ -69,7 +69,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${calSans.variable}`}
+      className={`${inter.variable} ${calSans.variable} scroll-smooth`}
     >
       <head>
         <Script
@@ -90,6 +90,12 @@ export default function RootLayout({
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />
+        <div id="hero"></div>
+        <div id="about"></div>
+        <div id="projects"></div>
+        <div id="skills"></div>
+        <div id="experience"></div>
+        <div id="contact"></div>
       </body>
     </html>
   );

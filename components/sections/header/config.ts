@@ -3,7 +3,7 @@ import { Link } from '@/types/link';
 const links: Link[] = [
   {
     title: 'Home',
-    href: '/',
+    href: '#hero',
     thumbnail: 'home.jpg'
   },
   {

@@ -24,6 +24,10 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
+    --christmas-red: 354 75% 41%;
+    --christmas-green: 148 63% 31%;
+    --christmas-gold: 45 93% 47%;
+    --snow-white: 0 0% 98%;
   }
 
   .dark {
@@ -46,6 +50,10 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    --christmas-red: 354 75% 41%;
+    --christmas-green: 148 63% 31%;
+    --christmas-gold: 45 93% 47%;
+    --snow-white: 0 0% 98%;
   }
 
   html {
@@ -179,4 +187,23 @@ html {
     padding-top: 1rem;
     overflow-y: auto;
   }
+}
+
+/* Add Christmas theme utility classes */
+.christmas-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--christmas-red)) 0%,
+    hsl(var(--christmas-green)) 100%
+  );
+}
+
+.christmas-text {
+  background: linear-gradient(
+    45deg,
+    hsl(var(--christmas-red)),
+    hsl(var(--christmas-gold))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 } 

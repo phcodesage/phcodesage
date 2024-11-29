@@ -4,7 +4,7 @@ const metadata: Metadata = {
   author: {
     name: 'Rech Toledo',
     username: 'phcodesage',
-    label: 'Full Stack Web Developer'
+    label: 'Full Stack Developer'
   },
   site: {
     title: 'phcodesage',

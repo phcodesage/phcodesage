@@ -1,67 +1,61 @@
+'use client';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@/components/sections/header/nav/link';
+import { translate } from '../../anim';
 import styles from './style.module.scss';
-import { blur, translate } from '../../anim';
-import { Link as LinkType } from '@/types/link';
-
-interface SelectedLink {
-  isActive: boolean;
-  index: number;
-}
 
 interface BodyProps {
-  links: LinkType[];
-  selectedLink: SelectedLink;
-  setSelectedLink: (selectedLink: SelectedLink) => void;
+  links: Array<{ title: string; href: string; thumbnail: string }>;
+  selectedLink: {
+    isActive: boolean;
+    index: number;
+  };
+  setSelectedLink: (link: { isActive: boolean; index: number }) => void;
   setIsActive: (isActive: boolean) => void;
+  onNavigate: (section: string) => void;
 }
 
 export default function Body({
   links,
   selectedLink,
   setSelectedLink,
-  setIsActive
+  setIsActive,
+  onNavigate
 }: BodyProps) {
-  const getChars = (word: string) => {
-    let chars: JSX.Element[] = [];
-    word.split('').forEach((char, i) => {
-      chars.push(
-        <motion.span
-          custom={[i * 0.02, (word.length - i) * 0.01]}
-          variants={translate}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-          key={char + i}
-        >
-          {char}
-        </motion.span>
-      );
-    });
-    return chars;
+  const handleClick = (title: string) => {
+    const sectionId = title.toLowerCase();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      onNavigate(sectionId);
+      setIsActive(false);
+    }
   };
 
   return (
     <div className={styles.body}>
       {links.map((link, index) => {
-        const { title, href, target } = link;
-
+        const { title } = link;
         return (
-          <Link key={`l_${index}`} href={href} target={target}>
-            <motion.p
-              onClick={() => setIsActive(false)}
-              onMouseOver={() => setSelectedLink({ isActive: true, index })}
-              onMouseLeave={() => setSelectedLink({ isActive: false, index })}
-              variants={blur}
-              animate={
-                selectedLink.isActive && selectedLink.index !== index
-                  ? 'open'
-                  : 'closed'
-              }
+          <motion.div
+            key={index}
+            custom={index}
+            variants={translate}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
+            <Link
+              title={title}
+              href={`#${title.toLowerCase()}`}
+              index={index}
+              isActive={selectedLink.isActive}
+              setSelectedLink={setSelectedLink}
+              onClick={() => handleClick(title)}
             >
-              {getChars(title)}
-            </motion.p>
-          </Link>
+              {title}
+            </Link>
+          </motion.div>
         );
       })}
     </div>

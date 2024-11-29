@@ -10,7 +10,7 @@ const Nav = ({ setIsActive }: NavProps) => {
     <nav className={styles.nav}>
       <div className={styles.navContent}>
         <div className={styles.navItems}>
-          <a href="#" onClick={() => setIsActive(false)}>
+          <a href="#hero" onClick={() => setIsActive(false)}>
             Home
           </a>
           <a href="#about" onClick={() => setIsActive(false)}>

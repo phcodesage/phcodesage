@@ -1,34 +1,23 @@
 'use client';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './style.module.scss';
 import { height } from '../anim';
-import Body from './body/body';
-import Footer from './footer/footer';
-import NavImage from './image/image';
-import { ModeToggle } from '@/components/mode-toggle';
 
-import { links } from '@/components/sections/header/config';
-
-interface IndexProps {
+interface NavProps {
   setIsActive: (isActive: boolean) => void;
+  onNavigate: (section: string) => void;
 }
 
-interface SelectedLinkState {
-  isActive: boolean;
-  index: number;
-}
+const Nav = ({ setIsActive, onNavigate }: NavProps) => {
+  const menuItems = ['About', 'Projects', 'Skills', 'Experience', 'Contact'];
 
-const Index: React.FC<IndexProps> = ({ setIsActive }) => {
-  const [selectedLink, setSelectedLink] = useState<SelectedLinkState>({
-    isActive: false,
-    index: 0
-  });
-
-  const handleNavClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      setIsActive(false);
-    }
+  const handleClick = (section: string) => {
+    // First close the menu
+    setIsActive(false);
+    // Then navigate using the parent's navigation function
+    setTimeout(() => {
+      onNavigate(section.toLowerCase());
+    }, 300); // Wait for menu close animation
   };
 
   return (
@@ -38,26 +27,24 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
       animate="enter"
       exit="exit"
       className={styles.nav}
-      onClick={handleNavClick}
     >
       <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <Body
-            links={links}
-            selectedLink={selectedLink}
-            setSelectedLink={setSelectedLink}
-            setIsActive={setIsActive}
-          />
-          {/* <Footer /> */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm">
+          <nav className="flex flex-col items-center justify-center space-y-8 p-8">
+            {menuItems.map((item) => (
+              <button
+                key={item}
+                onClick={() => handleClick(item)}
+                className="text-2xl font-semibold text-foreground transition-colors hover:text-primary"
+              >
+                {item}
+              </button>
+            ))}
+          </nav>
         </div>
-        <NavImage
-          src={links[selectedLink.index].thumbnail}
-          isActive={selectedLink.isActive}
-          alt={`Navigation image for ${links[selectedLink.index].title}`}
-        />
       </div>
     </motion.div>
   );
 };
 
-export default Index;
+export default Nav;

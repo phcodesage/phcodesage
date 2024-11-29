@@ -17,12 +17,11 @@ export default async function ProjectPage({
     notFound();
   }
 
-  // Get MDX content
   const content = await getProjectContent(slug);
 
   return (
-    <main className="container relative mx-auto min-h-screen max-w-7xl px-4 py-8">
-      {/* Enhanced Back Button */}
+    <main className="container relative mx-auto min-h-screen max-w-7xl overflow-y-auto px-4 py-8">
+      {/* Back Button */}
       <div className="sticky top-4 z-10 mb-8 w-full">
         <Link href="/#projects">
           <Button
@@ -36,45 +35,47 @@ export default async function ProjectPage({
         </Link>
       </div>
 
-      <div className="space-y-12">
+      <div className="space-y-8 pb-16 lg:space-y-12">
         {/* Project Header */}
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             {content.frontmatter.name || project.name}
           </h1>
           {content.frontmatter.description && (
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base text-muted-foreground sm:text-lg lg:text-xl">
               {content.frontmatter.description}
             </p>
           )}
         </div>
 
-        {/* Main Project Image */}
-        {project.thumbnail && (
-          <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-xl">
-            <Image
-              src={project.thumbnail}
-              alt={project.name}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
-
-        {/* Project Details Grid */}
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* Main Content */}
-          <div className="space-y-6 lg:col-span-2">
+          {/* Main Content Column */}
+          <div className="space-y-8 lg:col-span-2">
+            {/* Project Image */}
+            {project.thumbnail && (
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-xl">
+                <Image
+                  src={project.thumbnail}
+                  alt={project.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
+
             {/* Project Content */}
-            <div className="prose max-w-none dark:prose-invert">
-              <div dangerouslySetInnerHTML={{ __html: content.content }} />
+            <div className="prose max-w-none break-words dark:prose-invert">
+              <div
+                dangerouslySetInnerHTML={{ __html: content.content }}
+                className="space-y-4"
+              />
             </div>
 
             {/* Project Gallery */}
             {project.images && project.images.length > 0 && (
               <div className="space-y-4">
-                <h2 className="text-2xl font-semibold">Gallery</h2>
+                <h2 className="text-2xl font-bold">Gallery</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {project.images.map((image, index) => (
                     <div
@@ -95,64 +96,66 @@ export default async function ProjectPage({
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            <div className="rounded-lg border bg-card p-6">
+          <div className="lg:sticky lg:top-24 lg:h-fit">
+            <div className="rounded-lg border bg-card p-6 shadow-lg">
               {/* Project Meta */}
-              {content.frontmatter.role && (
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-muted-foreground">
-                    Role
-                  </h3>
-                  <p className="mt-1">{content.frontmatter.role}</p>
-                </div>
-              )}
-
-              {/* Tech Stack */}
-              {content.frontmatter.techstack &&
-                content.frontmatter.techstack.length > 0 && (
-                  <div className="mb-4">
+              <div className="space-y-6">
+                {content.frontmatter.role && (
+                  <div>
                     <h3 className="text-sm font-medium text-muted-foreground">
-                      Technologies Used
+                      Role
                     </h3>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {content.frontmatter.techstack.map(
-                        (tech: { label: string }, index: number) => (
-                          <span
-                            key={index}
-                            className="rounded-full bg-secondary px-3 py-1 text-sm"
-                          >
-                            {tech.label}
-                          </span>
-                        )
-                      )}
-                    </div>
+                    <p className="mt-1 text-base">{content.frontmatter.role}</p>
                   </div>
                 )}
 
-              {/* Project Links */}
-              <div className="flex flex-col gap-2">
-                {content.frontmatter.website && (
-                  <Button asChild className="w-full">
-                    <a
-                      href={content.frontmatter.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Website
-                    </a>
-                  </Button>
-                )}
-                {content.frontmatter.github && (
-                  <Button asChild variant="outline" className="w-full">
-                    <a
-                      href={content.frontmatter.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Source
-                    </a>
-                  </Button>
-                )}
+                {/* Tech Stack */}
+                {content.frontmatter.techstack &&
+                  content.frontmatter.techstack.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-medium text-muted-foreground">
+                        Technologies Used
+                      </h3>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {content.frontmatter.techstack.map(
+                          (tech: { label: string }, index: number) => (
+                            <span
+                              key={index}
+                              className="rounded-full bg-secondary px-3 py-1 text-sm"
+                            >
+                              {tech.label}
+                            </span>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                {/* Project Links */}
+                <div className="flex flex-col gap-2 pt-2">
+                  {content.frontmatter.website && (
+                    <Button asChild className="w-full">
+                      <a
+                        href={content.frontmatter.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit Website
+                      </a>
+                    </Button>
+                  )}
+                  {content.frontmatter.github && (
+                    <Button asChild variant="outline" className="w-full">
+                      <a
+                        href={content.frontmatter.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Source
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

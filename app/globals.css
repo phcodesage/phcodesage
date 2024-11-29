@@ -170,6 +170,16 @@ html {
 }
 
 @layer utilities {
+  /* Make all scrollable elements hide their scrollbars by default */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
   .section-container {
     @apply max-h-[calc(100vh-5rem)] overflow-y-auto no-scrollbar;
   }
@@ -183,9 +193,7 @@ html {
   }
 
   .content-area {
-    height: calc(100vh - 5rem); /* Adjust based on your navbar height */
-    padding-top: 1rem;
-    overflow-y: auto;
+    @apply h-[calc(100vh-5rem)] pt-4 overflow-y-auto no-scrollbar;
   }
 }
 

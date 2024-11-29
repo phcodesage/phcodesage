@@ -39,7 +39,11 @@ function Contact() {
     });
   }, [state]);
 
-  const handleSubmit = (formData: { name: string; email: string; message: string }) => {
+  const handleSubmit = (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => {
     const data = new FormData();
     data.append('name', formData.name);
     data.append('email', formData.email);
@@ -65,7 +69,7 @@ function Contact() {
                 {contact.email}
               </a>
             </p>
-            <div className="flex space-x-1">
+            <div className="flex items-center justify-center space-x-1">
               {contact.socials?.github && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.youtube}>

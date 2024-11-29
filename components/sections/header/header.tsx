@@ -17,12 +17,29 @@ interface HeaderProps {
 
 const Header = ({ loader, activeSection, onNavigate }: HeaderProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const router = useRouter();
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setHasScrolled(scrollPosition > 0);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check
+    handleScroll();
+
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNavigation = (section: string) => {
     const element = document.getElementById(section);
     if (element) {
-      // Update URL without page reload
       window.history.pushState({}, '', `/#${section}`);
       element.scrollIntoView({ behavior: 'smooth' });
       onNavigate(section);
@@ -42,19 +59,19 @@ const Header = ({ loader, activeSection, onNavigate }: HeaderProps) => {
       }
     };
 
-    // Handle initial load
     if (window.location.hash) {
       handleHashChange();
     }
 
-    // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, [onNavigate]);
 
   return (
     <motion.header
-      className={`${styles.header} relative`}
+      className={`${styles.header} fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+        hasScrolled ? 'bg-background/80 shadow-sm backdrop-blur-md' : ''
+      }`}
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ delay: loader ? 3.5 : 0, duration: 0.8 }}
@@ -130,7 +147,11 @@ const Header = ({ loader, activeSection, onNavigate }: HeaderProps) => {
       />
       <AnimatePresence mode="wait">
         {isActive && (
-          <Nav setIsActive={setIsActive} onNavigate={handleNavigation} />
+          <Nav
+            setIsActive={setIsActive}
+            onNavigate={handleNavigation}
+            hasScrolled={hasScrolled}
+          />
         )}
       </AnimatePresence>
     </motion.header>

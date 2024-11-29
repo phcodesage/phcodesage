@@ -4,21 +4,20 @@ const metadata: Metadata = {
   author: {
     name: 'Rech Toledo',
     username: 'phcodesage',
-    label: 'Full Stack Developer'
+    label: 'Software Developer'
   },
   site: {
     title: 'phcodesage',
-    description: 'Portfolio of web & app/developer Rech Toledo.',
+    description: 'Portfolio of Software Developer Rech Toledo.',
     ogImage: '/images/og.png',
     url: 'https://phcodesage.site',
     keywords: [
-      'web design',
-      'UI design',
+      'software development',
       'web development',
       'portfolio',
       'Rech Toledo',
-      'full stack developer',
-      'mobile app developer',
+      'software developer',
+      'full stack development',
       'React developer',
       'Node.js developer',
       'JavaScript developer',
@@ -30,14 +29,14 @@ const metadata: Metadata = {
       'React Native',
       'frontend development',
       'backend development',
-      'responsive design',
-      'cross-platform development',
-      'API integration',
+      'software architecture',
+      'cloud computing',
+      'API development',
       'database design',
       'software engineering',
-      'mobile-first design',
-      'progressive web apps',
-      'UI/UX development'
+      'system design',
+      'web applications',
+      'software solutions'
     ],
     language: 'en',
     charset: 'UTF-8'

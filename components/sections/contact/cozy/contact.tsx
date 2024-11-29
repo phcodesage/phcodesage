@@ -13,6 +13,7 @@ import ContactForm from './contact-form';
 import { contact } from '@/components/sections/contact/config';
 import { contactSubmit } from '@/app/actions';
 import { useFormState } from 'react-dom';
+import SectionTitle from '@/components/section-title';
 
 interface ValidationErrors {
   success: boolean;
@@ -73,15 +74,12 @@ function Contact() {
       <div className="px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Let&apos;s Connect
-            </h2>
-            <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Have a question or want to work together? Send me a message using
-              the form or connect with me on social media.
-            </p>
+            <SectionTitle
+              title="Let's Connect"
+              subtitle="Have a question or want to work together? Send me a message using the form or connect with me on social media."
+            />
 
-            <div className="flex space-x-2 pt-2">
+            <div className="flex items-center justify-center space-x-2 pt-2">
               {contact.socials?.youtube && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.youtube}>

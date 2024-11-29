@@ -7,9 +7,13 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { metadata as meta } from './config';
 import './globals.css';
 
+// Configure the Inter font with proper options
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap'
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter', // Add variable for Tailwind usage
+  adjustFontFallback: true
 });
 
 export const metadata: Metadata = {
@@ -70,16 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link
-          rel="preload"
-          href={inter.src}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning className={inter.variable}>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

@@ -6,6 +6,7 @@ import { CodeIcon } from 'lucide-react';
 import styles from './style.module.scss';
 import { opacity, background } from './anim';
 import Nav from './nav';
+import { ModeToggle } from '@/components/mode-toggle';
 
 import { metadata as meta } from '@/app/config';
 
@@ -26,7 +27,7 @@ const Header = ({ loader }: HeaderProps) => {
         y: 0
       }}
       transition={{
-        delay: loader ? 3.5 : 0, // 3.5 for loading, .5 can be added for delay
+        delay: loader ? 3.5 : 0,
         duration: 0.8
       }}
     >
@@ -36,21 +37,31 @@ const Header = ({ loader }: HeaderProps) => {
             {meta.author.name}
           </span>
         </Link>
-        <div onClick={() => setIsActive(!isActive)} className={styles.el}>
-          <div className={styles.label}>
-            <motion.p
-              variants={opacity}
-              animate={!isActive ? 'open' : 'closed'}
-            >
-              Menu
-            </motion.p>
-            <motion.p variants={opacity} animate={isActive ? 'open' : 'closed'}>
-              Close
-            </motion.p>
-          </div>
+
+        <div className="flex items-center gap-4">
+          <ModeToggle />
           <div
-            className={`${styles.burger} ${isActive ? styles.burgerActive : ''}`}
-          ></div>
+            onClick={() => setIsActive(!isActive)}
+            className={`${styles.el} cursor-pointer`}
+          >
+            <div className={styles.label}>
+              <motion.p
+                variants={opacity}
+                animate={!isActive ? 'open' : 'closed'}
+              >
+                Menu
+              </motion.p>
+              <motion.p
+                variants={opacity}
+                animate={isActive ? 'open' : 'closed'}
+              >
+                Close
+              </motion.p>
+            </div>
+            <div
+              className={`${styles.burger} ${isActive ? styles.burgerActive : ''}`}
+            ></div>
+          </div>
         </div>
       </div>
       <motion.div

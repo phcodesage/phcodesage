@@ -1,15 +1,17 @@
+'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './style.module.scss';
 import { opacity } from '../../anim';
 
-interface IndexProps {
+interface ImageProps {
   src: string;
   isActive: boolean;
+  alt: string;
 }
 
-const Index: React.FC<IndexProps> = ({ src, isActive }) => {
+const NavImage: React.FC<ImageProps> = ({ src, isActive, alt }) => {
   return (
     <motion.div
       variants={opacity}
@@ -17,14 +19,9 @@ const Index: React.FC<IndexProps> = ({ src, isActive }) => {
       animate={isActive ? 'open' : 'closed'}
       className={styles.imageContainer}
     >
-      <Image
-        src={`/images/nav/${src}`}
-        fill={true}
-        alt={'An image to describe the selected link'}
-        // priority={true}
-      />
+      <Image src={`/images/nav/${src}`} fill={true} alt={alt} priority={true} />
     </motion.div>
   );
 };
 
-export default Index;
+export default NavImage;

@@ -8,7 +8,7 @@ import { ArrowUpRightIcon } from 'lucide-react';
 function About() {
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="about">
-      <div className=" px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -16,7 +16,10 @@ function About() {
             </h2>
             <div className="space-y-4">
               <p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                I am a dedicated and innovative Full Stack Developer with experience in crafting web apps, mobile apps, and building full stack websites. My passion lies in solving complex problems and delivering high-quality solutions.
+                A Computer Science student and KodeGo graduate with a background
+                as a former computer technician. My journey in tech has equipped
+                me with both practical hardware experience and modern software
+                development skills.
               </p>
               <Button asChild>
                 <Link href="resume.pdf" target="_blank">

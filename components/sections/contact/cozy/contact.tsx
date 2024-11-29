@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import MotionWrap from '@/components/motion-wrap';
 import { toast } from '@/components/ui/use-toast';
@@ -30,16 +30,24 @@ const initialState: ValidationErrors = {
 
 function Contact() {
   const [state, formAction] = useFormState(contactSubmit, initialState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (state?.message === '') return;
 
     toast({
-      title: state?.message
+      title: state?.success ? 'Success!' : 'Error',
+      description: state?.message,
+      variant: state?.success ? 'default' : 'destructive'
     });
   }, [state]);
 
-  const handleSubmit = async (formData: { name: string; email: string; message: string }): Promise<ValidationErrors> => {
+  const handleSubmit = async (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }): Promise<ValidationErrors> => {
+    setIsSubmitting(true);
     const data = new FormData();
     data.append('name', formData.name);
     data.append('email', formData.email);
@@ -53,8 +61,10 @@ function Contact() {
       return {
         success: false,
         message: 'An error occurred while submitting the form.',
-        errors: {},
+        errors: {}
       };
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -62,22 +72,17 @@ function Contact() {
     <MotionWrap className="w-full py-24 lg:py-32" id="contact">
       <div className="px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Contact Me
+              Let&apos;s Connect
             </h2>
             <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Have a question or want to work together? Send me a message using
-              the form.
+              the form or connect with me on social media.
             </p>
-            <p className="text-muted-foreground">
-              Email:{' '}
-              <a className="hover:underline" href={`mailto:${contact.email}`}>
-                {contact.email}
-              </a>
-            </p>
-            <div className="flex space-x-1">
-              {contact.socials?.github && (
+
+            <div className="flex space-x-2 pt-2">
+              {contact.socials?.youtube && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.youtube}>
                     <YoutubeIcon className="h-4 w-4" />
@@ -87,7 +92,7 @@ function Contact() {
               {contact.socials?.twitter && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.twitter}>
-                    <TwitterIcon className="h-4 w-4" />{' '}
+                    <TwitterIcon className="h-4 w-4" />
                   </a>
                 </Button>
               )}
@@ -107,7 +112,11 @@ function Contact() {
               )}
             </div>
           </div>
-          <ContactForm state={state} onSubmit={handleSubmit} />
+          <ContactForm
+            state={state}
+            onSubmit={handleSubmit}
+            isSubmitting={isSubmitting}
+          />
         </div>
       </div>
     </MotionWrap>

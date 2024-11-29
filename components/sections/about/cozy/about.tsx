@@ -1,6 +1,5 @@
 import React from 'react';
 import MotionWrap from '@/components/motion-wrap';
-import Image from 'next/image';
 import Reveal from '@/components/reveal';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -9,7 +8,6 @@ import { ArrowUpRightIcon } from 'lucide-react';
 function About() {
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="about">
-      {/* TODO: Redesign for horizontal */}
       <div className="space-y-4 px-4 md:px-6 lg:space-y-10">
         <div className="flex w-full flex-col items-center justify-center text-center lg:flex-row lg:justify-between lg:text-left">
           <div className="flex flex-col items-center lg:items-start">
@@ -30,9 +28,10 @@ function About() {
         </div>
         <div className="space-y-4">
           <p className="mt-6 max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            I began my journey as a computer technician and massage therapist,
-            and as an undergraduate computer science student, I transitioned
-            into a full stack developer after completing a bootcamp at Kodego.
+            A Computer Science student and KodeGo graduate with a background as
+            a former computer technician. My journey in tech has equipped me
+            with both practical hardware experience and modern software
+            development skills.
           </p>
 
           <Button asChild>

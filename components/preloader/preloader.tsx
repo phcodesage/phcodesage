@@ -1,26 +1,40 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import styles from './style.module.scss';
 
-import Loader from './loader';
-
-function Preloader() {
+export default function Preloader() {
+  const [progress, setProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = 'default';
-        // observe: this change has not been observed for errors.
-        // window.scrollTo(0, 0);
-      }, 2000);
-    })();
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setTimeout(() => setIsLoading(false), 300);
+          return 100;
+        }
+        return prev + 10;
+      });
+    }, 50);
+
+    return () => clearInterval(interval);
   }, []);
 
+  if (!isLoading) return null;
+
   return (
-    <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
+    <div className={styles.preloader}>
+      <div className={styles.loadingContent}>
+        <div className={styles.progressContainer}>
+          <motion.div
+            className={styles.progressBar}
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+        <p className={styles.loadingText}>{progress}%</p>
+      </div>
+    </div>
   );
 }
-
-export default Preloader;

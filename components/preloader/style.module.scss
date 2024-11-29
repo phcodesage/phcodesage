@@ -1,30 +1,39 @@
-.introduction {
-  height: 100dvh;
-  width: 100dvw;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding-inline: 60px;
-  padding-bottom: 30px;
+.preloader {
   position: fixed;
-  z-index: 99;
-  // TODO: Add a better color instead of just the background to make it pop more
-  background-color: hsl(var(--background));
-  svg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: calc(100% + 300px);
-    path {
-      fill: hsl(var(--background));
-    }
-  }
-  p {
-    display: flex;
-    color: hsl(var(--foreground));
-    font-size: 72px;
-    align-items: center;
-    position: absolute;
-    z-index: 1;
-  }
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsl(var(--background));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loadingContent {
+  width: 200px;
+  text-align: center;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 2px;
+  background: hsl(var(--foreground) / 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  height: 100%;
+  background: hsl(var(--foreground));
+  transition: width 0.1s ease-out;
+}
+
+.loadingText {
+  font-size: 14px;
+  color: hsl(var(--foreground));
+  opacity: 0.7;
+  font-weight: 500;
 }

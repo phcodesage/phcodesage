@@ -1,274 +1,163 @@
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 import Image from 'next/image';
-import type { Metadata, ResolvingMetadata } from 'next';
+import { Button } from '@/components/ui/button';
+import { projects } from '@/components/sections/projects/config';
 import { notFound } from 'next/navigation';
-import { getAllPages, getPage, type ProjectMetadata } from '@/lib/mdx';
-import Header from './header';
+import { getProjectContent } from '@/lib/mdx';
 
-// Import icons from react-icons
-import { IconType } from 'react-icons/lib';
-import {
-  FaAngular,
-  FaAws,
-  FaCss3Alt,
-  FaDocker,
-  FaGithub,
-  FaGitlab,
-  FaJava,
-  FaJs,
-  FaNode,
-  FaPython,
-  FaReact,
-  FaVuejs
-} from 'react-icons/fa';
-import {
-  SiAmazondynamodb,
-  SiAndroid,
-  SiApollographql,
-  SiBootstrap,
-  SiCsharp,
-  SiDart,
-  SiDjango,
-  SiElasticsearch,
-  SiExpress,
-  SiFirebase,
-  SiFlask,
-  SiFlutter,
-  SiGo,
-  SiGraphql,
-  SiJavascript,
-  SiJquery,
-  SiKotlin,
-  SiKubernetes,
-  SiLaravel,
-  SiMongodb,
-  SiMysql,
-  SiNestjs,
-  SiNextdotjs,
-  SiNginx,
-  SiPostgresql,
-  SiRubyonrails,
-  SiRedis,
-  SiRuby,
-  SiRust,
-  SiScala,
-  SiSpring,
-  SiSqlite,
-  SiSwift,
-  SiTailwindcss,
-  SiTypescript,
-  SiVite,
-  SiWebpack
-} from 'react-icons/si';
-
-type TechLabels =
-  | 'Angular'
-  | 'AWS'
-  | 'CSS3'
-  | 'Docker'
-  | 'GitHub'
-  | 'GitLab'
-  | 'Java'
-  | 'JavaScript'
-  | 'Node.js'
-  | 'Python'
-  | 'React'
-  | 'Vue.js'
-  | 'DynamoDB'
-  | 'Android'
-  | 'Apollo'
-  | 'Bootstrap'
-  | 'C#'
-  | 'Dart'
-  | 'Django'
-  | 'Elasticsearch'
-  | 'Express'
-  | 'Firebase'
-  | 'Flask'
-  | 'Flutter'
-  | 'Go'
-  | 'GraphQL'
-  | 'jQuery'
-  | 'Kotlin'
-  | 'Kubernetes'
-  | 'Laravel'
-  | 'MongoDB'
-  | 'MySQL'
-  | 'NestJS'
-  | 'Next.js'
-  | 'Nginx'
-  | 'PostgreSQL'
-  | 'Ruby on Rails'
-  | 'Redis'
-  | 'Ruby'
-  | 'Rust'
-  | 'Scala'
-  | 'Spring'
-  | 'SQLite'
-  | 'Swift'
-  | 'Tailwind CSS'
-  | 'TypeScript'
-  | 'Vite'
-  | 'Webpack';
-
-const techIcons: Record<TechLabels, IconType> = {
-  Angular: FaAngular,
-  AWS: FaAws,
-  CSS3: FaCss3Alt,
-  Docker: FaDocker,
-  GitHub: FaGithub,
-  GitLab: FaGitlab,
-  Java: FaJava,
-  JavaScript: FaJs,
-  'Node.js': FaNode,
-  Python: FaPython,
-  React: FaReact,
-  'Vue.js': FaVuejs,
-  DynamoDB: SiAmazondynamodb,
-  Android: SiAndroid,
-  Apollo: SiApollographql,
-  Bootstrap: SiBootstrap,
-  'C#': SiCsharp,
-  Dart: SiDart,
-  Django: SiDjango,
-  Elasticsearch: SiElasticsearch,
-  Express: SiExpress,
-  Firebase: SiFirebase,
-  Flask: SiFlask,
-  Flutter: SiFlutter,
-  Go: SiGo,
-  GraphQL: SiGraphql,
-  jQuery: SiJquery,
-  Kotlin: SiKotlin,
-  Kubernetes: SiKubernetes,
-  Laravel: SiLaravel,
-  MongoDB: SiMongodb,
-  MySQL: SiMysql,
-  NestJS: SiNestjs,
-  'Next.js': SiNextdotjs,
-  Nginx: SiNginx,
-  PostgreSQL: SiPostgresql,
-  'Ruby on Rails': SiRubyonrails,
-  Redis: SiRedis,
-  Ruby: SiRuby,
-  Rust: SiRust,
-  Scala: SiScala,
-  Spring: SiSpring,
-  SQLite: SiSqlite,
-  Swift: SiSwift,
-  'Tailwind CSS': SiTailwindcss,
-  TypeScript: SiTypescript,
-  Vite: SiVite,
-  Webpack: SiWebpack
-};
-
-type ProjectPageProps = {
-  params: {
-    slug: string;
-  };
-  searchParams: Record<string, never>;
-};
-
-export const generateStaticParams = (): Array<ProjectPageProps['params']> => {
-  return getAllPages<ProjectMetadata>('projects').map((project) => ({
-    slug: project.slug
-  }));
-};
-
-export const generateMetadata = async (
-  props: ProjectPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> => {
-  const { params } = props;
-
-  const project = getPage<ProjectMetadata>(`projects/${params.slug}`);
-
-  if (!project) {
-    return {};
-  }
-
-  const {
-    metadata: { name, description }
-  } = project;
-  const previousTwitter = (await parent)?.twitter ?? {};
-  const previousOpenGraph = (await parent)?.openGraph ?? {};
-
-  return {
-    title: name,
-    description: description,
-    alternates: {
-      canonical: `/projects/${params.slug}`
-    },
-    openGraph: {
-      ...previousOpenGraph,
-      url: `/projects/${params.slug}`,
-      title: name,
-      description: description,
-      images: [
-        {
-          url: `/images/projects/${params.slug}/cover.png`,
-          width: 1280,
-          height: 832,
-          alt: description,
-          type: 'image/png'
-        }
-      ]
-    },
-    twitter: {
-      ...previousTwitter,
-      title: name,
-      description: description,
-      images: [
-        {
-          url: `/images/projects/${params.slug}/cover.png`,
-          width: 1280,
-          height: 832,
-          alt: description
-        }
-      ]
-    }
-  };
-};
-
-const ProjectPage = (props: ProjectPageProps) => {
-  const {
-    params: { slug }
-  } = props;
-
-  const project = getPage<ProjectMetadata>(`projects/${slug}`);
+export default async function ProjectPage({
+  params: { slug }
+}: {
+  params: { slug: string };
+}) {
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
   }
 
-  const { metadata, content } = project;
+  // Get MDX content
+  const content = await getProjectContent(slug);
 
   return (
-    <div className="container mx-auto">
-      <Header metadata={metadata} />
-      <Image
-        src={`/images/projects/${slug}/cover.jpg`}
-        width={1280}
-        height={832}
-        alt={metadata.name}
-        className="my-12 rounded-lg"
-      />
-      <div className="my-8">
-        <h2 className="text-2xl font-bold">Tech Stack</h2>
-        <ul className="mt-4 flex list-none flex-wrap gap-4">
-          {(metadata.techstack ?? []).map((tech, index) => {
-            const Icon = techIcons[tech.label as TechLabels];
-            return (
-              <li key={index} className="flex items-center space-x-2">
-                <Icon className="text-2xl" />
-                <span className="text-lg">{tech.label}</span>
-              </li>
-            );
-          })}
-        </ul>
+    <main className="container relative mx-auto min-h-screen max-w-7xl px-4 py-8">
+      {/* Enhanced Back Button */}
+      <div className="sticky top-4 z-10 mb-8 w-full">
+        <Link href="/#projects">
+          <Button
+            variant="secondary"
+            size="lg"
+            className="group flex items-center gap-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl"
+          >
+            <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
+            <span>Back to Projects</span>
+          </Button>
+        </Link>
       </div>
-      <div className="dark:prose-dark prose">{content}</div>
-    </div>
-  );
-};
 
-export default ProjectPage;
+      <div className="space-y-12">
+        {/* Project Header */}
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+            {content.frontmatter.name || project.name}
+          </h1>
+          {content.frontmatter.description && (
+            <p className="text-lg text-muted-foreground">
+              {content.frontmatter.description}
+            </p>
+          )}
+        </div>
+
+        {/* Main Project Image */}
+        {project.thumbnail && (
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-xl">
+            <Image
+              src={project.thumbnail}
+              alt={project.name}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
+
+        {/* Project Details Grid */}
+        <div className="grid gap-8 lg:grid-cols-3">
+          {/* Main Content */}
+          <div className="space-y-6 lg:col-span-2">
+            {/* Project Content */}
+            <div className="prose max-w-none dark:prose-invert">
+              <div dangerouslySetInnerHTML={{ __html: content.content }} />
+            </div>
+
+            {/* Project Gallery */}
+            {project.images && project.images.length > 0 && (
+              <div className="space-y-4">
+                <h2 className="text-2xl font-semibold">Gallery</h2>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {project.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className="relative aspect-video overflow-hidden rounded-lg"
+                    >
+                      <Image
+                        src={image}
+                        alt={`${project.name} gallery image ${index + 1}`}
+                        fill
+                        className="object-cover transition-transform hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            <div className="rounded-lg border bg-card p-6">
+              {/* Project Meta */}
+              {content.frontmatter.role && (
+                <div className="mb-4">
+                  <h3 className="text-sm font-medium text-muted-foreground">
+                    Role
+                  </h3>
+                  <p className="mt-1">{content.frontmatter.role}</p>
+                </div>
+              )}
+
+              {/* Tech Stack */}
+              {content.frontmatter.techstack &&
+                content.frontmatter.techstack.length > 0 && (
+                  <div className="mb-4">
+                    <h3 className="text-sm font-medium text-muted-foreground">
+                      Technologies Used
+                    </h3>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {content.frontmatter.techstack.map(
+                        (tech: { label: string }, index: number) => (
+                          <span
+                            key={index}
+                            className="rounded-full bg-secondary px-3 py-1 text-sm"
+                          >
+                            {tech.label}
+                          </span>
+                        )
+                      )}
+                    </div>
+                  </div>
+                )}
+
+              {/* Project Links */}
+              <div className="flex flex-col gap-2">
+                {content.frontmatter.website && (
+                  <Button asChild className="w-full">
+                    <a
+                      href={content.frontmatter.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit Website
+                    </a>
+                  </Button>
+                )}
+                {content.frontmatter.github && (
+                  <Button asChild variant="outline" className="w-full">
+                    <a
+                      href={content.frontmatter.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Source
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}

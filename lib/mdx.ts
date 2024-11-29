@@ -85,3 +85,22 @@ export const getAllPages = <T>(
     })
     .slice(0, limit);
 };
+
+export async function getProjectContent(slug: string) {
+  const filePath = path.join(process.cwd(), 'content/projects', `${slug}.mdx`);
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+
+  const { content, data } = matter(fileContent);
+
+  return {
+    content,
+    frontmatter: data as {
+      name: string;
+      description: string;
+      website?: string;
+      github?: string;
+      techstack?: Array<{ label: string }>;
+      role?: string;
+    }
+  };
+}

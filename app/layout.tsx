@@ -1,51 +1,23 @@
 import type { Metadata } from 'next';
-import { Instrument_Sans } from 'next/font/google';
-import '@/styles/globals.css';
-
+import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
-
-import { metadata as meta } from './config';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import DirectLink from '@/components/Ads/DirectLink';
-const inter = Instrument_Sans({ subsets: ['latin'] });
+import { metadata as meta } from './config';
+import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(meta.site.url),
   title: {
     default: meta.site.title,
     template: `%s | ${meta.site.title}`
   },
   description: meta.site.description,
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1
-    }
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: meta.author.name, // or meta.site.title
-    description: meta.site.description,
-    // site: '@username',
-    // siteId: 'id',
-    // creator: '@username',
-    // creatorId: 'id',
-    images: [
-      {
-        url: '/images/og.png',
-        width: 1200,
-        height: 630,
-        alt: meta.site.description
-      }
-    ]
-  },
   keywords: meta.site.keywords,
   creator: meta.author.username,
   openGraph: {
@@ -99,6 +71,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href={inter.src}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -106,7 +87,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <DirectLink />
           {children}
           <Toaster />
         </ThemeProvider>

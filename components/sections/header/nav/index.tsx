@@ -14,12 +14,10 @@ const Nav = ({ setIsActive, onNavigate, hasScrolled }: NavProps) => {
   const menuItems = ['About', 'Projects', 'Skills', 'Experience', 'Contact'];
 
   const handleClick = (section: string) => {
-    // First close the menu
     setIsActive(false);
-    // Then navigate using the parent's navigation function
     setTimeout(() => {
       onNavigate(section.toLowerCase());
-    }, 300); // Wait for menu close animation
+    }, 300);
   };
 
   return (
@@ -32,11 +30,13 @@ const Nav = ({ setIsActive, onNavigate, hasScrolled }: NavProps) => {
     >
       <div className={styles.wrapper}>
         <div
-          className={`fixed inset-0 z-50 flex items-center justify-center ${
-            hasScrolled ? 'bg-background/80 backdrop-blur-md' : 'bg-background'
+          className={`fixed inset-0 z-50 flex h-[100dvh] items-center justify-center ${
+            hasScrolled
+              ? 'bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80'
+              : 'bg-background/60 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60'
           }`}
         >
-          <nav className="flex flex-col items-center justify-center space-y-8 p-8">
+          <nav className="flex flex-col items-center justify-center gap-8">
             {menuItems.map((item) => (
               <button
                 key={item}

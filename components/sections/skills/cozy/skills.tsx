@@ -8,7 +8,7 @@ import SectionTitle from '@/components/section-title';
 function Skills() {
   return (
     <MotionWrap className="flex h-full w-full items-center" id="skills">
-      <div className="container h-full overflow-y-auto px-4 md:px-6">
+      <div className="container h-full overflow-y-auto px-4 pt-32 md:px-6 md:pt-36">
         <div className="space-y-6">
           <SectionTitle
             title="My Skills"

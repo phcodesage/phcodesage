@@ -70,7 +70,9 @@ const Header = ({ loader, activeSection, onNavigate }: HeaderProps) => {
   return (
     <motion.header
       className={`${styles.header} fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        hasScrolled ? 'bg-background/80 shadow-sm backdrop-blur-md' : ''
+        hasScrolled
+          ? 'bg-background/60 shadow-sm backdrop-blur-lg supports-[backdrop-filter]:bg-background/60'
+          : 'bg-background/40 backdrop-blur-md supports-[backdrop-filter]:bg-background/40'
       }`}
       initial={{ y: -80 }}
       animate={{ y: 0 }}

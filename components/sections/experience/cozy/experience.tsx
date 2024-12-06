@@ -13,6 +13,34 @@ function Experience() {
           <SectionTitle
             title="Experience"
             subtitle="My professional journey and contributions to various projects."
+            icon={
+              <svg
+                viewBox="0 0 100 100"
+                className="absolute -left-8 -top-6 h-10 w-10"
+                style={{ transform: 'rotate(-15deg)' }}
+              >
+                <path
+                  d="M20 70 L80 70 L50 20 Z"
+                  fill="#C41E3A"
+                  stroke="#fff"
+                  strokeWidth="2"
+                />
+                <path
+                  d="M15 70 L85 70 L85 80 L15 80 Z"
+                  fill="#fff"
+                  stroke="#fff"
+                  strokeWidth="1"
+                />
+                <circle
+                  cx="50"
+                  cy="20"
+                  r="8"
+                  fill="#fff"
+                  stroke="#fff"
+                  strokeWidth="1"
+                />
+              </svg>
+            }
           />
 
           <div className="grid gap-4 pb-6 md:grid-cols-2 lg:grid-cols-3">

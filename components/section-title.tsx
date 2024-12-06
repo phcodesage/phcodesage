@@ -1,30 +1,25 @@
-import ChristmasHat from '@/components/christmas/hat';
-import { cn } from '@/lib/utils';
+import React from 'react';
 
 interface SectionTitleProps {
   title: string;
-  subtitle?: string;
-  className?: string;
+  subtitle: string;
+  icon?: React.ReactNode;
 }
 
 export default function SectionTitle({
   title,
   subtitle,
-  className
+  icon
 }: SectionTitleProps) {
   return (
-    <div className={cn('flex flex-col items-center text-center', className)}>
-      <div className="relative inline-flex items-center">
-        <ChristmasHat className="absolute -left-8 -top-6 h-10 w-10" />
+    <div className="grid gap-6 md:grid-cols-2 md:items-center">
+      <div className="flex items-center space-x-4">
+        {icon && <div className="relative">{icon}</div>}
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           {title}
         </h2>
       </div>
-      {subtitle && (
-        <p className="mt-4 max-w-[700px] text-gray-500 dark:text-gray-400">
-          {subtitle}
-        </p>
-      )}
+      <p className="text-muted-foreground md:text-lg">{subtitle}</p>
     </div>
   );
 }

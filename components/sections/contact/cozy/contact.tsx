@@ -70,16 +70,24 @@ function Contact() {
   };
 
   return (
-    <MotionWrap className="w-full py-24 lg:py-32" id="contact">
-      <div className="px-4 md:px-6">
+    <MotionWrap
+      className="flex min-h-full w-full items-center justify-center"
+      id="contact"
+    >
+      <div className="container px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
-          <div className="space-y-4">
-            <SectionTitle
-              title="Let's Connect"
-              subtitle="Have a question or want to work together? Send me a message using the form or connect with me on social media."
-            />
+          <div className="space-y-6">
+            <div className="flex flex-col space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Let&apos;s Connect
+              </h2>
+              <p className="text-muted-foreground md:text-lg">
+                Have a question or want to work together? Send me a message
+                using the form or connect with me on social media.
+              </p>
+            </div>
 
-            <div className="flex items-center justify-center space-x-2 pt-2">
+            <div className="flex items-center space-x-2">
               {contact.socials?.youtube && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.youtube}>
@@ -110,11 +118,14 @@ function Contact() {
               )}
             </div>
           </div>
-          <ContactForm
-            state={state}
-            onSubmit={handleSubmit}
-            isSubmitting={isSubmitting}
-          />
+
+          <div className="rounded-2xl border bg-card p-6 shadow-lg transition-all hover:shadow-xl dark:bg-card/90">
+            <ContactForm
+              onSubmit={handleSubmit}
+              state={state}
+              isSubmitting={isSubmitting}
+            />
+          </div>
         </div>
       </div>
     </MotionWrap>

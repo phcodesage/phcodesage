@@ -8,13 +8,15 @@ interface FixedSectionProps {
   id: string;
   className?: string;
   onVisible?: (id: string) => void;
+  description?: string;
 }
 
 export default function FixedSection({
   children,
   id,
   className = '',
-  onVisible
+  onVisible,
+  description
 }: FixedSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5 });
@@ -42,9 +44,11 @@ export default function FixedSection({
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             {id.charAt(0).toUpperCase() + id.slice(1)}
           </h2>
-          <p className="max-w-[600px] text-muted-foreground md:text-lg">
-            {getSectionDescription(id)}
-          </p>
+          {description && (
+            <p className="max-w-[600px] text-muted-foreground md:text-lg">
+              {description}
+            </p>
+          )}
         </div>
 
         {/* Section Content */}

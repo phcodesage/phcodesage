@@ -8,14 +8,6 @@
   <a href="https://twitter.com/RechcelT" style="color: #0C3C60; text-decoration: none;">Twitter</a>
 </div>
 
-## 🛠️ Tech Stack
-
-- **Frontend:** React, Bootstrap, Tailwind CSS
-- **Backend:** Express, Node.js, Flask, Python
-- **Databases:** MongoDB, MySQL
-- **CMS & Frameworks:** WordPress, Laravel
-- **Other:** Git, REST API, FastAPI, Graphic Design
-
 ## 🎓 Education
 
 - **Full Stack Development** - Kodego Bootcamp (2022-2023)

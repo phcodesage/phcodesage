@@ -24,14 +24,11 @@ function About() {
             {/* About Text - Takes up less space */}
             <div className="order-2 flex flex-col justify-between space-y-4 lg:order-1 lg:col-span-5">
               <p className="text-gray-500 dark:text-gray-400 md:text-lg lg:text-base xl:text-lg">
-                As a Computer Technician turned Software Developer and KodeGo
-                Bootcamp graduate, currently pursuing Computer Science, I bring
-                a unique blend of hardware expertise and software development
-                skills. When not coding, I enjoy strategic thinking through
-                chess, immersing myself in RPG games, and solving complex
-                logical problems. This combination of technical knowledge and
-                analytical thinking allows me to approach software development
-                with both practical understanding and creative problem-solving.
+                Former Computer Technician turned Software Developer, currently
+                pursuing Computer Science. I blend hardware expertise with
+                modern development practices. Outside coding, I enjoy chess and
+                RPG games, applying the same strategic thinking to solve complex
+                technical challenges.
               </p>
 
               <Button asChild className="w-fit">

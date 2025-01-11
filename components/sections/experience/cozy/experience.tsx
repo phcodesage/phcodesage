@@ -7,7 +7,10 @@ import SectionTitle from '@/components/section-title';
 
 function Experience() {
   return (
-    <MotionWrap className="flex h-full w-full items-center" id="experience">
+    <MotionWrap
+      className="flex h-full w-full items-center pt-20"
+      id="experience"
+    >
       <div className="container h-full overflow-y-auto px-4 md:px-6">
         <div className="space-y-6">
           <SectionTitle
@@ -16,7 +19,7 @@ function Experience() {
             icon={
               <svg
                 viewBox="0 0 100 100"
-                className="absolute -left-8 -top-6 h-10 w-10"
+                className="absolute -left-8 top-0 h-10 w-10"
                 style={{ transform: 'rotate(-15deg)' }}
               >
                 <path

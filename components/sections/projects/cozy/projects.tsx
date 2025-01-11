@@ -12,7 +12,7 @@ function Projects() {
         <div className="space-y-6">
           <SectionTitle
             title="Projects"
-            subtitle="Here are some of the projects where I've turned code into cool, functional stuff."
+            subtitle="Here are some of the projects where I've turned code into impactful solutions."
           />
 
           <div className="grid gap-4 pb-6 md:grid-cols-2 lg:grid-cols-3">
@@ -24,6 +24,10 @@ function Projects() {
                 description={project.description}
                 thumbnail={project.thumbnail}
                 className="h-full"
+                metrics={project.metrics}
+                timeline={project.timeline}
+                role={project.role}
+                technologies={project.technologies}
               />
             ))}
           </div>

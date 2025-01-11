@@ -36,12 +36,12 @@ const Nav = ({ setIsActive, onNavigate, hasScrolled }: NavProps) => {
               : 'bg-background/60 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60'
           }`}
         >
-          <nav className="flex flex-col items-center justify-center gap-8">
+          <nav className="flex items-center justify-center space-x-8">
             {menuItems.map((item) => (
               <button
                 key={item}
                 onClick={() => handleClick(item)}
-                className="text-2xl font-semibold text-foreground transition-colors hover:text-primary"
+                className="text-base font-medium text-foreground transition-colors hover:text-primary"
               >
                 {item}
               </button>

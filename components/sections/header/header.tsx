@@ -8,6 +8,7 @@ import { opacity, background } from './anim';
 import Nav from './nav/index';
 import { ModeToggle } from '@/components/mode-toggle';
 import { metadata as meta } from '@/app/config';
+import { cn } from '@/lib/utils';
 
 interface HeaderProps {
   loader?: boolean;
@@ -67,6 +68,15 @@ const Header = ({ loader, activeSection, onNavigate }: HeaderProps) => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, [onNavigate]);
 
+  // Update the navigation items in the header component
+  const navigationItems = [
+    { label: 'About', section: 'about' },
+    { label: 'Projects', section: 'projects' },
+    { label: 'Skills', section: 'skills' },
+    { label: 'Experience', section: 'experience' },
+    { label: 'Contact', section: 'contact' }
+  ];
+
   return (
     <motion.header
       className={`${styles.header} fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
@@ -78,7 +88,6 @@ const Header = ({ loader, activeSection, onNavigate }: HeaderProps) => {
       animate={{ y: 0 }}
       transition={{ delay: loader ? 3.5 : 0, duration: 0.8 }}
     >
-      <div className="absolute left-0 top-0 h-1 w-full animate-pulse bg-gradient-to-r from-[#ff0000] via-[#00ff00] to-[#ff0000]" />
       <div className={styles.bar}>
         <Link
           href="#hero"
@@ -94,22 +103,21 @@ const Header = ({ loader, activeSection, onNavigate }: HeaderProps) => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center space-x-6 md:flex">
-          {['about', 'projects', 'skills', 'experience', 'contact'].map(
-            (section) => (
-              <button
-                key={section}
-                onClick={() => handleNavigation(section)}
-                className={`text-sm font-medium capitalize transition-colors hover:text-primary ${
-                  activeSection === section
-                    ? 'text-primary'
-                    : 'text-muted-foreground'
-                }`}
-              >
-                {section}
-              </button>
-            )
-          )}
+        <nav className="hidden items-center justify-center space-x-8 md:flex">
+          {navigationItems.map((item) => (
+            <button
+              key={item.section}
+              onClick={() => onNavigate(item.section)}
+              className={cn(
+                'text-base font-medium transition-colors hover:text-primary',
+                activeSection === item.section
+                  ? 'text-primary'
+                  : 'text-foreground'
+              )}
+            >
+              {item.label}
+            </button>
+          ))}
           <ModeToggle />
         </nav>
 

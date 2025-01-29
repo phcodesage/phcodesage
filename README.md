@@ -1,4 +1,4 @@
-# Rechcel Toledo - Full Stack Developer 🚀
+# Software Developer
 
 <div style="background-color: #0C3C60; color: #C7F0DB; padding: 20px; border-radius: 10px;">
 
